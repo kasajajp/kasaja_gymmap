@@ -3,138 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ジムマップ検索 | KASAJA.jp</title>
+    <title>ジムマップ | 全国のジムを地図から探す</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <style>
-        /* ジムマップ専用の追加デザイン */
-        .map-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        /* 地図を表示するエリアの大きさを指定 */
-        #map {
-            width: 100%;
-            height: 500px;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            z-index: 1;
-        }
-        .gym-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .gym-item {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 15px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .gym-item:hover {
-            border-color: #3b82f6;
-            background: #eff6ff;
-        }
-        .gym-name {
-            font-weight: bold;
-            color: #1e293b;
-            font-size: 1.1rem;
-        }
-        .gym-info {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-top: 5px;
-        }
-    </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-container">
-            <div class="logo"><a href="index.html">KASAJA.jp</a></div>
-            <nav>
-                <a href="index.html">ホーム</a>
-                <a href="https://kasajajp.github.io/tobacco_healthcare/">タバコ代計算機</a>
-                <a href="gym-map.html">ジムマップ</a>
-            </nav>
-        </div>
+    <header class="site-header">
+        <div class="header-logo">🏋️ GymMap</div>
+        <nav class="header-nav">
+            <a href="https://kasajajp.github.io/">KASAJA.jp ホーム</a>
+        </nav>
     </header>
 
-    <div class="wrapper">
+    <main class="main-container">
         
-        <aside class="sidebar">
-            <h3>コンテンツ</h3>
-            <ul>
-                <li><a href="index.html">ホーム・案内</a></li>
-                <li><a href="https://kasajajp.github.io/tobacco_healthcare/">🚬 タバコ代計算機</a></li>
-                <li><a href="gym-map.html" class="active">🏋️ ジムマップ検索</a></li>
-            </ul>
-        </aside>
+        <div class="hero-section">
+            <h1>全国のジムを地図から探す</h1>
+            <p>PC・携帯それぞれに最適化したマップ検索サイト</p>
+        </div>
 
-        <main class="main-content">
-            <h2>🏋️ ジムマップ検索（サンプル）</h2>
-            <p class="count">地図から近くのジムを見つけよう</p>
-
-            <div class="map-container">
-                <div id="map"></div>
-
-                <h3>📌 登録されているジム一覧</h3>
-                <div class="gym-list" id="gymList">
+        <div class="layout-flex">
+            
+            <section class="search-area">
+                <h2>都道府県から探す</h2>
+                
+                <div class="area-group">
+                    <span class="area-label">関東</span>
+                    <div class="buttons">
+                        <button onclick="moveMap([35.6812, 139.7671], 12)">東京</button>
+                        <button onclick="moveMap([35.4477, 139.6425], 12)">神奈川</button>
                     </div>
-            </div>
-        </main>
-    </div>
+                </div>
+
+                <div class="area-group">
+                    <span class="area-label">関西</span>
+                    <div class="buttons">
+                        <button onclick="moveMap([34.6937, 135.5023], 12)">大阪</button>
+                        <button onclick="moveMap([35.0116, 135.7681], 12)">京都</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="map-section">
+                <div id="map"></div>
+            </section>
+
+        </div>
+
+    </main>
 
     <script>
-        // 1. 地図の初期設定（日本の中心付近：東京駅あたりを設定）
-        const map = L.map('map').setView([35.681236, 139.767125], 14);
+        const map = L.map('map').setView([35.681236, 139.767125], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-        // 2. 背景の地図タイル（OpenStreetMap）を読み込む
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // 3. ジムのデータ（名前、緯度・経度、説明文）を用意する
-        const gymData = [
-            { name: "KASAJA フィットネス 東京店", lat: 35.681236, lng: 139.767125, desc: "24時間営業・初心者歓迎の快適ジム！" },
-            { name: "エニタイムジム 八重洲店", lat: 35.6795, lng: 139.7710, desc: "駅チカで通いやすい、マシン特化型ジム。" },
-            { name: "ゴールドマッスル 丸の内", lat: 35.6830, lng: 139.7630, desc: "本格的なフリーウエイト完備のプロ仕様。" }
-        ];
-
-        const gymListContainer = document.getElementById('gymList');
-
-        // 4. データを地図上のピン（マーカー）と、下のリストに反映させる
-        gymData.forEach((gym, index) => {
-            // 地図にピンを立てる
-            const marker = L.marker([gym.lat, gym.lng]).addTo(map);
-            marker.bindPopup(`<b>${gym.name}</b><br>${gym.desc}`);
-
-            // 下のリストにカードを追加する
-            const gymItem = document.createElement('div');
-            gymItem.className = 'gym-item';
-            gymItem.innerHTML = `
-                <div class="gym-name">📍 ${gym.name}</div>
-                <div class="gym-info">${gym.desc}</div>
-            `;
-
-            // リストのカードをクリックしたら、地図のその場所へジャンプする機能
-            gymItem.onclick = () => {
-                map.setView([gym.lat, gym.lng], 16);
-                marker.openPopup();
-            };
-
-            gymListContainer.appendChild(gymItem);
-        });
+        function moveMap(coords, zoom) {
+            map.setView(coords, zoom);
+        }
     </script>
 </body>
 </html>
