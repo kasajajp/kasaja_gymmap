@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ジムマップ | 全国のジムを地図から探す</title>
+    <title>ジムマップ | 全国のジムを駅名・位置・料金から探す</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -11,7 +11,9 @@
 <body>
 
     <header class="site-header">
-        <div class="header-logo">🏋️ GymMap</div>
+        <div class="header-logo">
+            <span class="logo-icon">🏋️</span> GymMap <span class="logo-sub">ジムマップ</span>
+        </div>
         <nav class="header-nav">
             <a href="https://kasajajp.github.io/">KASAJA.jp ホーム</a>
         </nav>
@@ -20,46 +22,213 @@
     <main class="main-container">
         
         <div class="hero-section">
-            <h1>全国のジムを地図から探す</h1>
-            <p>PC・携帯それぞれに最適化したマップ検索サイト</p>
+            <h1>全国のジムを地図・駅から探す</h1>
+            <p>最寄り駅からの距離や月額料金を一覧でパッと比較</p>
         </div>
 
         <div class="layout-flex">
             
-            <section class="search-area">
-                <h2>都道府県から探す</h2>
+            <div class="left-panel">
                 
-                <div class="area-group">
-                    <span class="area-label">関東</span>
-                    <div class="buttons">
-                        <button onclick="moveMap([35.6812, 139.7671], 12)">東京</button>
-                        <button onclick="moveMap([35.4477, 139.6425], 12)">神奈川</button>
+                <section class="search-area">
+                    <h2>駅名で探す</h2>
+                    <div class="search-box">
+                        <input type="text" id="stationInput" placeholder="例: 東京、渋谷、新宿" onkeypress="handleKeyPress(event)">
+                        <button onclick="searchStation()">🔍 検索</button>
                     </div>
-                </div>
 
-                <div class="area-group">
-                    <span class="area-label">関西</span>
-                    <div class="buttons">
-                        <button onclick="moveMap([34.6937, 135.5023], 12)">大阪</button>
-                        <button onclick="moveMap([35.0116, 135.7681], 12)">京都</button>
+                    <h2 style="margin-top: 20px;">主要エリアから探す</h2>
+                    <div class="area-group">
+                        <span class="area-label">東京周辺</span>
+                        <div class="buttons">
+                            <button onclick="moveMap([35.6812, 139.7671], '東京駅')">東京</button>
+                            <button onclick="moveMap([35.6580, 139.7016], '渋谷駅')">渋谷</button>
+                            <button onclick="moveMap([35.6894, 139.6917], '新宿')">新宿</button>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="map-section">
-                <div id="map"></div>
-            </section>
+                <section class="gym-list-section">
+                    <h2>📌 周辺のおすすめジム一覧</h2>
+                    <div class="gym-grid" id="gymGrid">
+                        </div>
+                </section>
+            </div>
+
+            <div class="right-panel">
+                <section class="map-section">
+                    <div id="map"></div>
+                </section>
+            </div>
 
         </div>
 
     </main>
 
-    <script>
-        const map = L.map('map').setView([35.681236, 139.767125], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    <footer class="site-footer">
+        <p>&copy; GymMap / KASAJA.jp All Rights Reserved.</p>
+    </footer>
 
-        function moveMap(coords, zoom) {
-            map.setView(coords, zoom);
+    <script>
+        // 1. 地図の初期化（東京駅を中心に設定）
+        const map = L.map('map').setView([35.681236, 139.767125], 14);
+
+        // 2. 本家のすっきりした背景に近い地図タイルを読み込み
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 3. データベース（駅名、距離、料金を細かく設定）
+        const gymData = [
+            { 
+                name: "chocoZAP（チョコザップ）東京駅前", 
+                station: "東京駅", 
+                distance: "徒歩3分 (240m)", 
+                price: "月額 2,980円 (税込3,278円)",
+                lat: 35.6825, lng: 139.7660, 
+                desc: "着替え不要で24時間いつでも気軽に通える初心者向けコンビニジム！", 
+                link: "#" 
+            },
+            { 
+                name: "エニタイムフィットネス 八重洲店", 
+                station: "東京駅", 
+                distance: "徒歩5分 (400m)", 
+                price: "月額 7,480円 (税込)",
+                lat: 35.6795, lng: 139.7710, 
+                desc: "24時間年中無休！本格的なマシン特化型スポーツジム。世界中の店舗が相互利用可能。", 
+                link: "#" 
+            },
+            { 
+                name: "RIZAP（ライザップ）丸の内店", 
+                station: "東京駅", 
+                distance: "徒歩6分 (480m)", 
+                price: "入会金＋コース料金プランあり",
+                lat: 35.6830, lng: 139.7630, 
+                desc: "完全個室のマンツーマントレーニング。専属トレーナーが食事から運動まで徹底サポート。", 
+                link: "#" 
+            },
+            { 
+                name: "ゴールドジム 渋谷東京", 
+                station: "渋谷駅", 
+                distance: "徒歩2分 (160m)", 
+                price: "月額 10,000円〜",
+                lat: 35.6605, lng: 139.7025, 
+                desc: "本格的なフリーウエイト、圧倒的なマシン台数を誇る最高峰のトレーニング環境。", 
+                link: "#" 
+            }
+        ];
+
+        // 主要な駅の座標データ
+        const stationCoords = {
+            "東京": [35.6812, 139.7671],
+            "東京駅": [35.6812, 139.7671],
+            "渋谷": [35.6580, 139.7016],
+            "渋谷駅": [35.6580, 139.7016],
+            "新宿": [35.6894, 139.6917],
+            "新宿駅": [35.6894, 139.6917]
+        };
+
+        const gymGrid = document.getElementById('gymGrid');
+        let markers = [];
+
+        // 画面起動時にすべてのピンとカードを表示
+        renderGyms();
+
+        // ピンとカードを描画するメイン処理
+        function renderGyms(targetStation = "") {
+            // 一旦クリア
+            gymGrid.innerHTML = "";
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+
+            gymData.forEach(gym => {
+                // 特定の駅が検索されている場合、一致するものだけ表示（空ならすべて表示）
+                if (targetStation && gym.station !== targetStation) return;
+
+                // 地図にピンを立てる
+                const marker = L.marker([gym.lat, gym.lng]).addTo(map);
+                marker.bindPopup(`
+                    <div style="font-family:sans-serif;">
+                        <b style="color:#003366;font-size:1.1rem;">${gym.name}</b><br>
+                        <span style="color:#e67e22;font-weight:bold;">💰 ${gym.price}</span><br>
+                        📍 ${gym.station} から ${gym.distance}<br>
+                        <a href="${gym.link}" style="display:inline-block; margin-top:8px; color:#0066cc; font-weight:bold;">👉 詳細を見る</a>
+                    </div>
+                `);
+                markers.push(marker);
+
+                // 左側の紹介カードを生成（本家のデータ項目風）
+                const card = document.createElement('div');
+                card.className = 'gym-card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3>${gym.name}</h3>
+                    </div>
+                    <div class="card-meta-table">
+                        <div class="meta-row"><span class="meta-label">最寄り駅</span><span class="meta-value">📍 ${gym.station}</span></div>
+                        <div class="meta-row"><span class="meta-label">駅からの距離</span><span class="meta-value">🏃 ${gym.distance}</span></div>
+                        <div class="meta-row"><span class="meta-label">料金目安</span><span class="meta-value price-tag">💰 ${gym.price}</span></div>
+                    </div>
+                    <p class="gym-desc">${gym.desc}</p>
+                    <div class="card-buttons">
+                        <button class="btn-map-move" onclick="focusGym(${gym.lat}, ${gym.lng})">🗺️ 地図で見る</button>
+                        <a href="${gym.link}" class="btn-detail">詳細はこちら ➔</a>
+                    </div>
+                `;
+                gymGrid.appendChild(card);
+            });
+        }
+
+        // 駅名検索ボタンが押されたとき
+        function searchStation() {
+            const input = document.getElementById('stationInput').value.trim();
+            if (!input) {
+                alert("駅名を入力してください！");
+                return;
+            }
+
+            // 部分一致に対応（「東京」で検索しても「東京駅」にヒットさせる）
+            let foundKey = "";
+            for (let key in stationCoords) {
+                if (key.includes(input) || input.includes(key)) {
+                    foundKey = key;
+                    break;
+                }
+            }
+
+            if (foundKey) {
+                const coords = stationCoords[foundKey];
+                // 地図をその駅に移動
+                map.setView(coords, 15);
+                // リストをその駅のジムだけに絞り込む（「東京駅」や「渋谷駅」の正規化名称で渡す）
+                const normStation = foundKey.endsWith("駅") ? foundKey : foundKey + "駅";
+                renderGyms(normStation);
+            } else {
+                alert(`「${input}」のサンプルデータがまだ登録されていません。東京、渋谷、新宿でお試しください！`);
+            }
+        }
+
+        // エンターキーでも検索できるようにする
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchStation();
+            }
+        }
+
+        // エリアボタン用
+        function moveMap(coords, stationName) {
+            document.getElementById('stationInput').value = stationName.replace("駅", "");
+            map.setView(coords, 15);
+            renderGyms(stationName.endsWith("駅") ? stationName : stationName + "駅");
+        }
+
+        // カードの「地図で見る」を押したとき
+        function focusGym(lat, lng) {
+            map.setView([lat, lng], 16);
+            // スマホ時は地図の位置まで自動スクロール
+            if (window.innerWidth <= 768) {
+                document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
+            }
         }
     </script>
 </body>
