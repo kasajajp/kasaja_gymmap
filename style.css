@@ -1,113 +1,66 @@
-/* 全体設定 */
+/* 全体共通 */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f6f8; /* 本家の少しグレーがかった背景色 */
+    color: #333333;
 }
 
-/* --- 画像1枚目：ヘッダーのデザイン --- */
+/* === ヘッダー（紺色） === */
 .site-header {
-    background-color: #0d233a; /* 画像の通りの濃紺 */
+    background-color: #112941; /* スクショから抽出したきれいな紺色 */
     color: #ffffff;
-    padding: 12px 40px;
+    padding: 12px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid #0b1d30;
 }
 .header-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
-.logo-emoji {
-    font-size: 1.8rem;
-}
-.logo-text {
-    font-size: 1.8rem;
-    font-weight: 800;
-}
-.logo-sub {
-    font-size: 0.9rem;
-    color: #a0aec0;
-    margin-top: 8px;
-    margin-left: 10px;
-}
-.header-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.85rem;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 5px 12px;
-    border-radius: 4px;
-}
+.logo-emoji { font-size: 1.6rem; margin-right: 8px; }
+.logo-text { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; }
+.logo-sub { font-size: 0.85rem; color: #a3b8cc; margin-left: 8px; margin-top: 6px; }
+.header-nav a { color: #ffffff; text-decoration: none; font-size: 0.85rem; opacity: 0.8; }
+.header-nav a:hover { opacity: 1; }
 
-/* --- 画像2枚目：ヒーローセクション（黒背景のエリア） --- */
+/* === 黒背景のヒーローセクション === */
 .hero-section {
-    background-color: #000000; /* 画像は真っ黒 */
+    background-color: #050b11; /* 深い黒 */
     color: #ffffff;
-    padding: 60px 20px;
+    padding: 45px 20px;
     text-align: center;
 }
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-.hero-section h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
+.hero-content { max-width: 750px; margin: 0 auto; }
+.hero-section h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; letter-spacing: 0.5px; }
+
+/* 比較ボックス */
+.comparison-box {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 20px;
     margin-bottom: 30px;
 }
+.comparison-note { font-size: 0.75rem; color: #8899a6; margin-bottom: 5px; }
+.comparison-text { font-size: 0.85rem; color: #ccd6dd; line-height: 1.6; margin-bottom: 15px; }
+.price-display { display: flex; justify-content: center; align-items: center; gap: 40px; }
+.shop-name { display: block; font-size: 0.75rem; color: #8899a6; margin-bottom: 3px; }
+.price-value { font-size: 1.6rem; font-weight: bold; letter-spacing: 0.5px; }
+.price-divider { font-size: 1.4rem; color: #445566; }
 
-/* 料金比較ボックス */
-.comparison-box {
-    background-color: rgba(255, 255, 255, 0.05); /* ほんのり白混ぜた黒 */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 40px;
-}
-.comparison-note {
-    font-size: 0.8rem;
-    color: #a0aec0;
-    margin-bottom: 10px;
-}
-.comparison-text {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-.price-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    font-weight: bold;
-}
-.shop-name {
-    display: block;
-    font-size: 0.8rem;
-    color: #a0aec0;
-    margin-bottom: 5px;
-}
-.price-value {
-    font-size: 1.5rem;
-}
-.price-divider {
-    font-size: 1.5rem;
-    color: #a0aec0;
-}
-
-/* 検索バーセクション */
+/* 検索バー（虫眼鏡アイコン・丸型） */
 .main-search-bar {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    max-width: 600px;
+    gap: 12px;
+    max-width: 620px;
     margin: 0 auto;
 }
 .search-input-wrapper {
@@ -116,43 +69,109 @@ body {
 }
 .search-icon {
     position: absolute;
-    left: 15px;
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    color: #666;
+    color: #8899a6;
 }
 .search-input-wrapper input {
     width: 100%;
-    padding: 12px 12px 12px 40px;
-    border-radius: 30px; /* 丸い入力欄 */
+    padding: 12px 50px 12px 42px;
+    border-radius: 25px;
     border: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     outline: none;
+    background: #ffffff;
+}
+.search-submit-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #8b5cf6;
+    border: none;
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-/* 現在地で検索ボタン（紫） */
+/* 現在地検索ボタン（紫） */
 .btn-current-location {
-    background-color: #8b5cf6; /* 画像の通りの鮮やかな紫 */
-    color: white;
+    background-color: #8b5cf6; /* スクショ通りの鮮やかな紫 */
+    color: #ffffff;
     border: none;
     padding: 0 20px;
-    border-radius: 30px;
+    border-radius: 25px;
     font-weight: bold;
+    font-size: 0.9rem;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     white-space: nowrap;
-    transition: background 0.2s;
 }
-.btn-current-location:hover {
-    background-color: #7c3aed;
+.btn-current-location:hover { background-color: #7c4dff; }
+
+/* === 5. 本家の並び順フィルターバー（白背景・丸型） === */
+.filter-section {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    padding: 12px 20px;
+}
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+.filter-item select {
+    padding: 8px 30px 8px 12px;
+    border: 1px solid #ccd6dd;
+    border-radius: 8px;
+    background: #f5f8fa;
+    font-size: 0.85rem;
+    color: #4a5568;
+}
+.slider-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+.filter-label { color: #657786; font-weight: bold; }
+.filter-val-badge {
+    background-color: #a78bfa;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+/* 並び替えボタン（紫・グレー） */
+.sort-item { display: flex; align-items: center; gap: 5px; }
+.btn-sort {
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: #e1e8ed;
+    color: #657786;
+}
+.btn-sort.active {
+    background: #a78bfa; /* スクショ通りの選択中紫カラー */
+    color: white;
+    font-weight: bold;
 }
 
-/* --- メインコンテンツのレイアウト --- */
+/* === 6. メイン分割レイアウト（左：結果、右：地図） === */
 .main-container {
-    max-width: 1200px;
-    margin: 30px auto;
+    max-width: 1240px;
+    margin: 20px auto;
     padding: 0 20px;
 }
 .layout-flex {
@@ -160,32 +179,118 @@ body {
     gap: 20px;
 }
 .left-panel {
-    width: 450px;
+    width: 440px; /* 本家風のカード横幅 */
     flex-shrink: 0;
 }
 .right-panel {
     flex-grow: 1;
-}
-#map {
-    width: 100%;
-    height: 600px;
-    border-radius: 12px;
-    border: 1px solid #ddd;
     position: sticky;
     top: 20px;
 }
 
-/* スマホ対応 */
+/* 検索結果ヘッダー */
+.results-header, .map-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.results-header h2, .map-header h2 { font-size: 1.1rem; color: #14171a; font-weight: bold; }
+.results-count {
+    background-color: #c084fc;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* 地図の枠線と角丸 */
+#map {
+    width: 100%;
+    height: 620px;
+    border-radius: 12px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* === 7. ジム情報カードデザイン === */
+.gym-grid { display: flex; flex-direction: column; gap: 12px; }
+.gym-card {
+    background: #ffffff;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+.card-left-info { flex-grow: 1; padding-right: 15px; }
+.card-left-info h3 { font-size: 1.1rem; color: #14171a; margin-bottom: 8px; font-weight: bold; }
+.gym-address, .gym-walk { font-size: 0.8rem; color: #657786; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+
+.card-right-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-width: 130px;
+}
+.price-badge {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #8b5cf6; /* 紫色の価格テキスト */
+    text-align: right;
+    border: 1px solid #e9d5ff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #f3e8ff;
+    width: 100%;
+}
+.price-tax { display: block; font-size: 0.65rem; color: #7c3aed; font-weight: normal; margin-top: 2px; }
+
+/* ボタン類 */
+.btn-detail {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+}
+.btn-website {
+    border: 1px solid #ccd6dd;
+    color: #657786;
+    background: #ffffff;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 4px;
+    font-weight: bold;
+}
+.btn-website:hover { background: #f5f8fa; }
+
+/* === 8. スマホ表示（縦1列） === */
 @media (max-width: 768px) {
-    .site-header { padding: 12px 20px; }
-    .logo-text { font-size: 1.4rem; }
-    .logo-emoji { font-size: 1.4rem; }
+    .site-header { padding: 10px 15px; }
+    .logo-text { font-size: 1.3rem; }
     .logo-sub { display: none; }
+    .hero-section { padding: 30px 15px; }
+    .hero-section h1 { font-size: 1.1rem; }
+    .main-search-bar { flex-direction: column; gap: 8px; }
     
-    .hero-section h1 { font-size: 1.2rem; }
-    .main-search-bar { flex-direction: column; }
+    .filter-container { gap: 8px; }
     
     .layout-flex { flex-direction: column; }
-    .left-panel { width: 100%; }
-    #map { height: 350px; }
+    .left-panel { width: 100%; order: 2; }
+    .right-panel { width: 100%; order: 1; }
+    #map { height: 320px; }
+    .gym-card { flex-direction: column; gap: 12px; }
+    .card-right-actions { align-items: flex-start; width: 100%; }
 }
