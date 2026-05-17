@@ -1,321 +1,191 @@
-/* === 全体の基本リセット設定 === */
+/* 全体設定 */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f7f9fa; /* 本家風の、少し青み・グレーみのあるすっきりした白背景 */
-    color: #333333;
-    line-height: 1.5;
-}
-a {
-    text-decoration: none;
-    color: inherit;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
 }
 
-/* === ヘッダー（本家風デザイン） === */
+/* --- 画像1枚目：ヘッダーのデザイン --- */
 .site-header {
-    background-color: #0d233a; /* 本家の洗練されたダークネイビー */
+    background-color: #0d233a; /* 画像の通りの濃紺 */
     color: #ffffff;
-    padding: 12px 20px;
+    padding: 12px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .header-logo {
-    font-size: 1.3rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-emoji {
+    font-size: 1.8rem;
+}
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
 }
 .logo-sub {
-    font-size: 0.75rem;
-    font-weight: normal;
-    opacity: 0.7;
-    margin-left: 5px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-top: 8px;
+    margin-left: 10px;
 }
 .header-nav a {
+    color: #fff;
+    text-decoration: none;
     font-size: 0.85rem;
-    border: 1px solid rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.3);
     padding: 5px 12px;
     border-radius: 4px;
-    transition: all 0.2s;
-}
-.header-nav a:hover {
-    background-color: #ffffff;
-    color: #0d233a;
 }
 
-/* === メインコンテナ構造 === */
-.main-container {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 20px;
-}
+/* --- 画像2枚目：ヒーローセクション（黒背景のエリア） --- */
 .hero-section {
+    background-color: #000000; /* 画像は真っ黒 */
+    color: #ffffff;
+    padding: 60px 20px;
     text-align: center;
-    margin: 20px 0 25px 0;
+}
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 .hero-section h1 {
-    font-size: 1.6rem;
-    color: #0d233a;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
     font-weight: bold;
-}
-.hero-section p {
-    color: #666666;
-    font-size: 0.95rem;
+    margin-bottom: 30px;
 }
 
-/* ==========================================
-   🖥️ パソコン表示（2カラム横並び）のレイアウト
-============================================ */
+/* 料金比較ボックス */
+.comparison-box {
+    background-color: rgba(255, 255, 255, 0.05); /* ほんのり白混ぜた黒 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+}
+.comparison-note {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    margin-bottom: 10px;
+}
+.comparison-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.price-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-weight: bold;
+}
+.shop-name {
+    display: block;
+    font-size: 0.8rem;
+    color: #a0aec0;
+    margin-bottom: 5px;
+}
+.price-value {
+    font-size: 1.5rem;
+}
+.price-divider {
+    font-size: 1.5rem;
+    color: #a0aec0;
+}
+
+/* 検索バーセクション */
+.main-search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.search-input-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+.search-input-wrapper input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border-radius: 30px; /* 丸い入力欄 */
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* 現在地で検索ボタン（紫） */
+.btn-current-location {
+    background-color: #8b5cf6; /* 画像の通りの鮮やかな紫 */
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+.btn-current-location:hover {
+    background-color: #7c3aed;
+}
+
+/* --- メインコンテンツのレイアウト --- */
+.main-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
 .layout-flex {
     display: flex;
     gap: 20px;
-    align-items: flex-start;
 }
 .left-panel {
-    width: 450px; /* 左側に検索窓とカード一覧を固定 */
+    width: 450px;
     flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 .right-panel {
-    flex-grow: 1; /* 右側は地図が全幅に広がる */
-    position: sticky;
-    top: 20px; /* スクロールしても地図が画面についてくる */
-}
-
-/* === 検索エリア（本家の丸ボタン・すっきり枠線） === */
-.search-area {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-}
-.search-area h2 {
-    font-size: 1.05rem;
-    color: #0d233a;
-    margin-bottom: 12px;
-    font-weight: bold;
-}
-.search-box {
-    display: flex;
-    gap: 8px;
-}
-.search-box input {
     flex-grow: 1;
-    padding: 10px 12px;
-    border: 1px solid #ccd6dd;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    outline: none;
 }
-.search-box input:focus {
-    border-color: #0066cc;
-}
-.search-box button {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    padding: 0 16px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-.search-box button:hover {
-    background-color: #0052a3;
-}
-
-/* 主要エリアボタン（本家風の丸ボタン） */
-.area-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-.area-label {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: #666;
-    width: 65px;
-}
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-.buttons button {
-    background-color: #ffffff;
-    border: 1px solid #ccd6dd;
-    color: #4a5568;
-    padding: 5px 14px;
-    border-radius: 20px; /* 本家風のきれいな丸み */
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.15s;
-}
-.buttons button:hover {
-    border-color: #0066cc;
-    color: #0066cc;
-    background-color: #f0f7ff;
-}
-
-/* === 地図セクション === */
 #map {
     width: 100%;
-    height: 650px; /* PCでは縦に長くして見やすく */
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    height: 600px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    position: sticky;
+    top: 20px;
 }
 
-/* === 📌 ジム紹介カード（駅名・距離・料金特化デザイン） === */
-.gym-list-section h2 {
-    font-size: 1.1rem;
-    color: #0d233a;
-    margin-bottom: 12px;
-}
-.gym-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.gym-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 18px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.02);
-}
-.card-header h3 {
-    font-size: 1.15rem;
-    color: #1a202c;
-    margin-bottom: 12px;
-    font-weight: bold;
-}
-
-/* メタ情報テーブル（本家のように項目が縦にスッキリ並ぶデザイン） */
-.card-meta-table {
-    background-color: #f8fafc;
-    border-radius: 6px;
-    padding: 10px 14px;
-    margin-bottom: 12px;
-    border: 1px solid #edf2f7;
-}
-.meta-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    font-size: 0.88rem;
-    border-bottom: 1px dashed #e2e8f0;
-}
-.meta-row:last-child {
-    border-bottom: none;
-}
-.meta-label {
-    color: #718096;
-    font-weight: 500;
-}
-.meta-value {
-    color: #2d3748;
-    font-weight: bold;
-}
-.price-tag {
-    color: #d35400 !important; /* 料金は目立つようにオレンジがかった茶系に */
-}
-.gym-desc {
-    font-size: 0.85rem;
-    color: #4a5568;
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-/* カード内ボタン設定（マップ移動 ＆ アフィリエイト用公式ボタン） */
-.card-buttons {
-    display: flex;
-    gap: 10px;
-}
-.btn-map-move {
-    flex: 1;
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    color: #475569;
-    padding: 8px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.1s;
-}
-.btn-map-move:hover {
-    background: #f1f5f9;
-}
-.btn-detail {
-    flex: 1;
-    background: #e67e22; /* 本家風のクリックを誘う美しいオレンジ色のボタン */
-    color: white;
-    text-align: center;
-    padding: 8px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: opacity 0.15s;
-}
-.btn-detail:hover {
-    opacity: 0.9;
-}
-
-/* === フッター === */
-.site-footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    font-size: 0.8rem;
-    color: #a0aec0;
-    border-top: 1px solid #e2e8f0;
-}
-
-/* ==========================================
-   📱 携帯・スマホ（横幅768px以下）の表示切り替え
-============================================ */
+/* スマホ対応 */
 @media (max-width: 768px) {
-    .layout-flex {
-        flex-direction: column; /* 横並びをやめて上下に一本化 */
-    }
-    .left-panel {
-        width: 100%; /* スマホ時は全幅に広げる */
-        order: 1; /* 1番目に検索とリストを表示 */
-    }
-    .right-panel {
-        width: 100%;
-        order: 2; /* 2番目に地図を表示 */
-    }
-    #map {
-        height: 380px; /* スマホ画面にすっぽり収まるサイズ */
-    }
+    .site-header { padding: 12px 20px; }
+    .logo-text { font-size: 1.4rem; }
+    .logo-emoji { font-size: 1.4rem; }
+    .logo-sub { display: none; }
     
-    /* スマホは親指でタップするため、エリアボタンを2列の大きめなグリッドにする */
-    .buttons {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        width: 100%;
-    }
-    .buttons button {
-        padding: 10px 5px;
-        font-size: 0.9rem;
-        text-align: center;
-        border-radius: 6px;
-    }
-    .area-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    .hero-section h1 { font-size: 1.2rem; }
+    .main-search-bar { flex-direction: column; }
+    
+    .layout-flex { flex-direction: column; }
+    .left-panel { width: 100%; }
+    #map { height: 350px; }
 }
