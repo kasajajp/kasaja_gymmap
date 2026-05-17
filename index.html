@@ -112,129 +112,137 @@
     </footer>
 
     <script>
-        // 地図の初期化（最初はスクショにあった「瑞江駅」周辺を開く設定にしています）
-        const map = L.map('map').setView([35.6931, 139.8979], 14);
+const map = L.map('map').setView([35.6812, 139.7671], 11); // 最初は少し広めに東京を表示
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
-        // ダミー用の全国ジムデータベース（検索された駅の近くに自動配置される仕組みを下に作りました）
-        const gymDatabase = [
-            { name: "エニタイムフィットネス 瑞江店", address: "江戸川区瑞江1-19-1", price: "¥7,150", distance: "0.4km" },
-            { name: "エニタイムフィットネス 篠崎店", address: "江戸川区篠崎町7-21", price: "¥7,480", distance: "1.2km" },
-            { name: "エニタイムフィットネス 一之江店", address: "江戸川区一之江8-13", price: "¥6,980", distance: "2.1km" }
-        ];
+let gymDatabase = [];
+let currentMarkers = [];
 
-        let currentMarkers = [];
+// 1. ページが開かれた瞬間に、Pythonが作った『gym_data.json』をロード
+fetch('gym_data.json')
+    .then(response => response.json())
+    .then(data => {
+        gymDatabase = data; 
+        updateGymList(gymDatabase, "全国"); // 最初は全店舗を表示
+    })
+    .catch(error => {
+        console.error("データファイルの読み込みに失敗しました:", error);
+    });
 
-        // 起動時に初期位置のジムを表示
-        updateGymList(35.6931, 139.8979, "瑞江駅");
+function handleKeyPress(event) {
+    if (event.key === 'Enter') searchStation();
+}
 
-        // ⌨️ エンターキーで検索
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') searchStation();
-        }
+// 2. 🔥 【重要】ここが連動の心臓部です！
+function searchStation() {
+    const query = document.getElementById('stationInput').value.trim();
+    if (!query) {
+        updateGymList(gymDatabase, "全国");
+        map.setView([35.6812, 139.7671], 11);
+        return;
+    }
 
-        // 🚀 【重要】国土地理院やOpenStreetMapの無料データを使って、文字から緯度経度を自動取得する関数
-        function searchStation() {
-            const query = document.getElementById('stationInput').value.trim();
-            if (!query) {
-                alert("駅名や地名を入力してください。");
-                return;
-            }
-
-            // 日本国内の場所に限定して検索する無料の検索APIURL
-            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=jp`;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data && data.length > 0) {
-                        const lat = parseFloat(data[0].lat);
-                        const lng = parseFloat(data[0].lon);
-                        
-                        // 地図を検索された場所にジャンプ！
-                        map.setView([lat, lng], 14);
-                        
-                        // その駅の周辺にジムカードとピンを再配置
-                        updateGymList(lat, lng, query);
-                    } else {
-                        alert(`「${query}」が見つかりませんでした。別の駅名や地名で試してください。`);
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert("検索中にエラーが発生しました。");
+    // 無料のインターネット地図検索(API)を使って、入力された駅名（例：「池袋」）の正確な緯度経度を取得
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=jp`;
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.length > 0) {
+                const searchLat = parseFloat(data[0].lat);
+                const searchLng = parseFloat(data[0].lon);
+                
+                // ① 地図を入力された駅にジャンプさせる！
+                map.setView([searchLat, searchLng], 14);
+                
+                // ② 【ここが修正ポイント】
+                // データベース(JSON)の中にある全ジムと、検索された駅の「直線距離」を全部計算して、
+                // 「半径 5km 以内」にあるジムだけを自動で抜き出す（フィルタリングする）
+                const nearbyGyms = gymDatabase.filter(gym => {
+                    const distance = getDistance(searchLat, searchLng, gym.lat, gym.lng);
+                    gym.currentDistance = distance; // 計算した距離を一時的にジムデータに保存
+                    return distance <= 5.0; // 5km以内のジムだけを合格にする（ここの数字を変えれば範囲調整可能）
                 });
-        }
 
-        // 地図と左側リストを連動更新する処理
-        function updateGymList(centerLat, centerLng, stationName) {
-            const gymGrid = document.getElementById('gymGrid');
-            gymGrid.innerHTML = "";
-            
-            // 古いピンを全部消去
-            currentMarkers.forEach(m => map.removeLayer(m));
-            currentMarkers = [];
-
-            // 検索された駅の周りに、それっぽい位置でピンを3つ自動生成して配置（シミュレーション）
-            const offsets = [
-                { lat: 0.002, lng: -0.003, d: "0.3km" },
-                { lat: -0.004, lng: 0.005, d: "0.8km" },
-                { lat: 0.006, lng: 0.002, d: "1.5km" }
-            ];
-
-            gymDatabase.forEach((gym, index) => {
-                const finalLat = centerLat + offsets[index].lat;
-                const finalLng = centerLng + offsets[index].lng;
-                const finalDist = offsets[index].d;
-
-                // 1. 地図にピン（マーカー）を立てる
-                const marker = L.marker([finalLat, finalLng]).addTo(map);
-                marker.bindPopup(`<b>${gym.name}</b><br>価格: ${gym.price}<br>${stationName}から ${finalDist}`);
-                currentMarkers.push(marker);
-
-                // 2. 左側に本家そっくりのカードを作成
-                const card = document.createElement('div');
-                card.className = 'gym-card';
-                card.innerHTML = `
-                    <div class="card-left-info">
-                        <h3>${gym.name}</h3>
-                        <p class="gym-address"><i class="fa-solid fa-location-dot"></i> ${gym.address}</p>
-                        <p class="gym-walk"><i class="fa-solid fa-person-walking"></i> ${stationName}から ${finalDist}</p>
-                    </div>
-                    <div class="card-right-actions">
-                        <div class="price-badge">${gym.price} <span class="price-tax">通常価格（税込）</span></div>
-                        <button class="btn-detail" onclick="focusGym(${finalLat}, ${finalLng}, ${index})"><i class="fa-solid fa-circle-info"></i> 詳細</button>
-                        <a href="#" class="btn-website" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 公式サイト</a>
-                    </div>
-                `;
-                gymGrid.appendChild(card);
-            });
-
-            document.getElementById('resultsCount').innerText = `${gymDatabase.length}店舗`;
-        }
-
-        function focusGym(lat, lng, index) {
-            map.setView([lat, lng], 16);
-            currentMarkers[index].openPopup();
-        }
-
-        function searchCurrentLocation() {
-            if (!navigator.geolocation) {
-                alert("お使いのブラウザは位置情報に対応していません。");
-                return;
+                // ③ 絞り込まれたジムだけで、左側のリストと地図のピンを書き換える！
+                updateGymList(nearbyGyms, query);
+                
+            } else {
+                alert(`「${query}」の位置が見つかりませんでした。別の駅名で試してください。`);
             }
-            navigator.geolocation.getCurrentPosition(position => {
-                const lat = position.coords.latitude;
-                const lng = position.coords.longitude;
-                map.setView([lat, lng], 14);
-                updateGymList(lat, lng, "現在地");
-            }, () => {
-                alert("位置情報の取得に失敗しました。");
-            });
-        }
+        })
+        .catch(error => {
+            console.error("検索エラー:", error);
+            alert("検索中にエラーが発生しました。");
+        });
+}
+
+// 3. 緯度経度から2点間の直線距離（km）を計算する魔法の数学式
+function getDistance(lat1, lng1, lat2, lng2) {
+    const R = 6371; // 地球の半径 (km)
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
+// 4. リストとピンを再描画する関数
+function updateGymList(gymsToShow, stationName) {
+    const gymGrid = document.getElementById('gymGrid');
+    gymGrid.innerHTML = "";
+    
+    // 古いピンを全部消す
+    currentMarkers.forEach(m => map.removeLayer(m));
+    currentMarkers = [];
+
+    if (gymsToShow.length === 0) {
+        gymGrid.innerHTML = `<p style='padding:20px; color:#666;'>${stationName}駅の周辺（5km以内）に該当するジムのデータがありません。</p>`;
+        document.getElementById('resultsCount').innerText = "0店舗";
+        return;
+    }
+
+    // 表示するジムをループ処理
+    gymsToShow.forEach((gym, index) => {
+        // 地図にピンを立てる
+        const marker = L.marker([gym.lat, gym.lng]).addTo(map);
+        marker.bindPopup(`<b>${gym.name}</b><br>価格: ${gym.price}<br><a href="${gym.url}" target="_blank">公式サイト</a>`);
+        currentMarkers.push(marker);
+
+        // 距離の表示テキスト（検索時のみ「〇〇駅から○km」と表示）
+        const distanceText = gym.currentDistance ? `${stationName}から ${gym.currentDistance.toFixed(1)}km` : `${gym.station}駅 周辺`;
+
+        // 左側のカードを生成
+        const card = document.createElement('div');
+        card.className = 'gym-card';
+        card.innerHTML = `
+            <div class="card-left-info">
+                <h3>${gym.name}</h3>
+                <p class="gym-address"><i class="fa-solid fa-location-dot"></i> ${gym.address}</p>
+                <p class="gym-walk"><i class="fa-solid fa-train"></i> ${distanceText}</p>
+            </div>
+            <div class="card-right-actions">
+                <div class="price-badge">${gym.price} <span class="price-tax">通常価格（税込）</span></div>
+                <button class="btn-detail" onclick="focusGym(${gym.lat}, ${gym.lng}, ${index})"><i class="fa-solid fa-map-pin"></i> 位置を見る</button>
+                <a href="${gym.url}" class="btn-website" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 公式サイト</a>
+            </div>
+        `;
+        gymGrid.appendChild(card);
+    });
+
+    // 件数バッジの数値を更新
+    document.getElementById('resultsCount').innerText = `${gymsToShow.length}店舗`;
+}
+
+function focusGym(lat, lng, index) {
+    map.setView([lat, lng], 16);
+    if(currentMarkers[index]) currentMarkers[index].openPopup();
+}
     </script>
 </body>
 </html>
