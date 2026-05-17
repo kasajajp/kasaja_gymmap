@@ -112,7 +112,7 @@
     </footer>
 
     <script>
-const map = L.map('map').setView([35.6812, 139.7671], 11); // 最初は少し広めに東京を表示
+const map = L.map('map').setView([35.6812, 139.7671], 11);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
@@ -121,12 +121,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 let gymDatabase = [];
 let currentMarkers = [];
 
-// 1. ページが開かれた瞬間に、Pythonが作った『gym_data.json』をロード
+// 1. ページが開かれた瞬間にデータをロード
 fetch('gym_data.json')
     .then(response => response.json())
     .then(data => {
         gymDatabase = data; 
-        updateGymList(gymDatabase, "全国"); // 最初は全店舗を表示
+        updateGymList(gymDatabase.slice(0, 20), "全国"); // 最初はとりあえず先頭20件を表示
     })
     .catch(error => {
         console.error("データファイルの読み込みに失敗しました:", error);
@@ -136,16 +136,16 @@ function handleKeyPress(event) {
     if (event.key === 'Enter') searchStation();
 }
 
-// 2. 🔥 【重要】ここが連動の心臓部です！
+// 2. 🔥 距離自動計算＆近い順ソートシステム
 function searchStation() {
     const query = document.getElementById('stationInput').value.trim();
     if (!query) {
-        updateGymList(gymDatabase, "全国");
+        updateGymList(gymDatabase.slice(0, 20), "全国");
         map.setView([35.6812, 139.7671], 11);
         return;
     }
 
-    // 無料のインターネット地図検索(API)を使って、入力された駅名（例：「池袋」）の正確な緯度経度を取得
+    // 入力された駅名から座標を取得
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=jp`;
     
     fetch(url)
@@ -155,32 +155,33 @@ function searchStation() {
                 const searchLat = parseFloat(data[0].lat);
                 const searchLng = parseFloat(data[0].lon);
                 
-                // ① 地図を入力された駅にジャンプさせる！
+                // ① 地図を検索された駅にジャンプさせる
                 map.setView([searchLat, searchLng], 14);
                 
-                // ② 【ここが修正ポイント】
-                // データベース(JSON)の中にある全ジムと、検索された駅の「直線距離」を全部計算して、
-                // 「半径 5km 以内」にあるジムだけを自動で抜き出す（フィルタリングする）
-                const nearbyGyms = gymDatabase.filter(gym => {
+                // ② 全国のジムとの距離を「すべて」計算する
+                const calculatedGyms = gymDatabase.map(gym => {
                     const distance = getDistance(searchLat, searchLng, gym.lat, gym.lng);
-                    gym.currentDistance = distance; // 計算した距離を一時的にジムデータに保存
-                    return distance <= 5.0; // 5km以内のジムだけを合格にする（ここの数字を変えれば範囲調整可能）
+                    return { ...gym, currentDistance: distance }; // 距離情報を追加
                 });
 
-                // ③ 絞り込まれたジムだけで、左側のリストと地図のピンを書き換える！
+                // ③ 距離が「近い順（昇順）」に並び替える！
+                calculatedGyms.sort((a, b) => a.currentDistance - b.currentDistance);
+
+                // ④ 近いものトップ20件だけを抜き出して画面に表示！
+                const nearbyGyms = calculatedGyms.slice(0, 20);
+
                 updateGymList(nearbyGyms, query);
                 
             } else {
-                alert(`「${query}」の位置が見つかりませんでした。別の駅名で試してください。`);
+                alert(`「${query}」の位置が見つかりませんでした。`);
             }
         })
         .catch(error => {
             console.error("検索エラー:", error);
-            alert("検索中にエラーが発生しました。");
         });
 }
 
-// 3. 緯度経度から2点間の直線距離（km）を計算する魔法の数学式
+// 3. 2点間の直線距離（km）を計算する数学式
 function getDistance(lat1, lng1, lat2, lng2) {
     const R = 6371; // 地球の半径 (km)
     const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -197,24 +198,23 @@ function updateGymList(gymsToShow, stationName) {
     const gymGrid = document.getElementById('gymGrid');
     gymGrid.innerHTML = "";
     
-    // 古いピンを全部消す
+    // 古いピンを全削除
     currentMarkers.forEach(m => map.removeLayer(m));
     currentMarkers = [];
 
     if (gymsToShow.length === 0) {
-        gymGrid.innerHTML = `<p style='padding:20px; color:#666;'>${stationName}駅の周辺（5km以内）に該当するジムのデータがありません。</p>`;
+        gymGrid.innerHTML = `<p style='padding:20px; color:#666;'>ジムのデータがありません。</p>`;
         document.getElementById('resultsCount').innerText = "0店舗";
         return;
     }
 
-    // 表示するジムをループ処理
     gymsToShow.forEach((gym, index) => {
         // 地図にピンを立てる
         const marker = L.marker([gym.lat, gym.lng]).addTo(map);
         marker.bindPopup(`<b>${gym.name}</b><br>価格: ${gym.price}<br><a href="${gym.url}" target="_blank">公式サイト</a>`);
         currentMarkers.push(marker);
 
-        // 距離の表示テキスト（検索時のみ「〇〇駅から○km」と表示）
+        // 距離のテキスト表示（少数第1位まで。例: 1.2km）
         const distanceText = gym.currentDistance ? `${stationName}から ${gym.currentDistance.toFixed(1)}km` : `${gym.station}駅 周辺`;
 
         // 左側のカードを生成
@@ -235,7 +235,6 @@ function updateGymList(gymsToShow, stationName) {
         gymGrid.appendChild(card);
     });
 
-    // 件数バッジの数値を更新
     document.getElementById('resultsCount').innerText = `${gymsToShow.length}店舗`;
 }
 
