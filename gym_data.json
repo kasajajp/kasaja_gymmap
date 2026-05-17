@@ -1,11 +1,659 @@
 [
     {
+        "name": "エニタイムフィットネス 札幌店",
+        "address": "札幌駅",
+        "price": "¥7,678",
+        "station": "札幌",
+        "lat": 43.0686555,
+        "lng": 141.350787,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 札幌駅前店",
+        "address": "札幌駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "札幌",
+        "lat": 43.0736555,
+        "lng": 141.346787,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 札幌中央店",
+        "address": "札幌駅 中央通り",
+        "price": "¥7,678",
+        "station": "札幌",
+        "lat": 43.0626555,
+        "lng": 141.357787,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 旭川店",
+        "address": "旭川",
+        "price": "¥7,678",
+        "station": "旭川",
+        "lat": 43.7627501,
+        "lng": 142.3579263,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 旭川インター店",
+        "address": "旭川 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "旭川",
+        "lat": 43.7747501,
+        "lng": 142.3729263,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 函館店",
+        "address": "函館駅",
+        "price": "¥7,678",
+        "station": "函館",
+        "lat": 41.7737985,
+        "lng": 140.7263784,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 函館駅前店",
+        "address": "函館駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "函館",
+        "lat": 41.7787985,
+        "lng": 140.7223784,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 函館中央店",
+        "address": "函館駅 中央通り",
+        "price": "¥7,678",
+        "station": "函館",
+        "lat": 41.7677985,
+        "lng": 140.7333784,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 青森店",
+        "address": "青森駅",
+        "price": "¥7,678",
+        "station": "青森",
+        "lat": 40.8288673,
+        "lng": 140.7335699,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 青森インター店",
+        "address": "青森駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "青森",
+        "lat": 40.8408673,
+        "lng": 140.74856989999998,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 盛岡店",
+        "address": "盛岡",
+        "price": "¥7,678",
+        "station": "盛岡",
+        "lat": 39.7014998,
+        "lng": 141.1365544,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 盛岡駅前店",
+        "address": "盛岡 駅前ビル",
+        "price": "¥7,678",
+        "station": "盛岡",
+        "lat": 39.7064998,
+        "lng": 141.1325544,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 盛岡中央店",
+        "address": "盛岡 中央通り",
+        "price": "¥7,678",
+        "station": "盛岡",
+        "lat": 39.6954998,
+        "lng": 141.1435544,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 仙台店",
+        "address": "仙太鮨",
+        "price": "¥7,678",
+        "station": "仙台",
+        "lat": 34.4688429,
+        "lng": 133.8211265,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 仙台インター店",
+        "address": "仙太鮨 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "仙台",
+        "lat": 34.4808429,
+        "lng": 133.83612649999998,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 秋田店",
+        "address": "秋田駅",
+        "price": "¥7,678",
+        "station": "秋田",
+        "lat": 39.7170137,
+        "lng": 140.1295542,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 秋田駅前店",
+        "address": "秋田駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "秋田",
+        "lat": 39.722013700000005,
+        "lng": 140.1255542,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 秋田中央店",
+        "address": "秋田駅 中央通り",
+        "price": "¥7,678",
+        "station": "秋田",
+        "lat": 39.7110137,
+        "lng": 140.1365542,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 山形店",
+        "address": "善行駅",
+        "price": "¥7,678",
+        "station": "山形",
+        "lat": 35.3629227,
+        "lng": 139.4730552,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 山形インター店",
+        "address": "善行駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "山形",
+        "lat": 35.3749227,
+        "lng": 139.4880552,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福島店",
+        "address": "福島駅",
+        "price": "¥7,678",
+        "station": "福島",
+        "lat": 34.696893,
+        "lng": 135.487218,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福島駅前店",
+        "address": "福島駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "福島",
+        "lat": 34.701893000000005,
+        "lng": 135.48321800000002,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福島中央店",
+        "address": "福島駅 中央通り",
+        "price": "¥7,678",
+        "station": "福島",
+        "lat": 34.690893,
+        "lng": 135.49421800000002,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 郡山店",
+        "address": "郡山",
+        "price": "¥7,678",
+        "station": "郡山",
+        "lat": 37.398488,
+        "lng": 140.388798,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 郡山インター店",
+        "address": "郡山 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "郡山",
+        "lat": 37.410488,
+        "lng": 140.403798,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 水戸店",
+        "address": "水戸駅",
+        "price": "¥7,678",
+        "station": "水戸",
+        "lat": 36.3716111,
+        "lng": 140.4754133,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 水戸駅前店",
+        "address": "水戸駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "水戸",
+        "lat": 36.376611100000005,
+        "lng": 140.47141330000002,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 水戸中央店",
+        "address": "水戸駅 中央通り",
+        "price": "¥7,678",
+        "station": "水戸",
+        "lat": 36.3656111,
+        "lng": 140.48241330000002,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 宇都宮店",
+        "address": "宇都宮駅",
+        "price": "¥7,678",
+        "station": "宇都宮",
+        "lat": 36.5596305,
+        "lng": 139.8983141,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 宇都宮インター店",
+        "address": "宇都宮駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "宇都宮",
+        "lat": 36.5716305,
+        "lng": 139.91331409999998,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高崎店",
+        "address": "高崎",
+        "price": "¥7,678",
+        "station": "高崎",
+        "lat": 36.3223804,
+        "lng": 139.0127191,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高崎駅前店",
+        "address": "高崎 駅前ビル",
+        "price": "¥7,678",
+        "station": "高崎",
+        "lat": 36.3273804,
+        "lng": 139.0087191,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高崎中央店",
+        "address": "高崎 中央通り",
+        "price": "¥7,678",
+        "station": "高崎",
+        "lat": 36.3163804,
+        "lng": 139.0197191,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 前橋店",
+        "address": "前橋駅",
+        "price": "¥7,678",
+        "station": "前橋",
+        "lat": 36.3837755,
+        "lng": 139.0721904,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 前橋インター店",
+        "address": "前橋駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "前橋",
+        "lat": 36.3957755,
+        "lng": 139.0871904,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス さいたま店",
+        "address": "さいたま新都心",
+        "price": "¥7,678",
+        "station": "さいたま",
+        "lat": 35.8936374,
+        "lng": 139.6339481,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス さいたま駅前店",
+        "address": "さいたま新都心 駅前ビル",
+        "price": "¥7,678",
+        "station": "さいたま",
+        "lat": 35.898637400000005,
+        "lng": 139.6299481,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス さいたま中央店",
+        "address": "さいたま新都心 中央通り",
+        "price": "¥7,678",
+        "station": "さいたま",
+        "lat": 35.8876374,
+        "lng": 139.6409481,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大宮店",
+        "address": "大宮",
+        "price": "¥7,678",
+        "station": "大宮",
+        "lat": 35.9063869,
+        "lng": 139.6243304,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大宮インター店",
+        "address": "大宮 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "大宮",
+        "lat": 35.9183869,
+        "lng": 139.63933039999998,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浦和店",
+        "address": "浦賀駅",
+        "price": "¥7,678",
+        "station": "浦和",
+        "lat": 35.2505942,
+        "lng": 139.714971,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浦和駅前店",
+        "address": "浦賀駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "浦和",
+        "lat": 35.255594200000004,
+        "lng": 139.710971,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浦和中央店",
+        "address": "浦賀駅 中央通り",
+        "price": "¥7,678",
+        "station": "浦和",
+        "lat": 35.2445942,
+        "lng": 139.721971,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 川口店",
+        "address": "川口",
+        "price": "¥7,678",
+        "station": "川口",
+        "lat": 35.8019257,
+        "lng": 139.7175116,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 川口インター店",
+        "address": "川口 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "川口",
+        "lat": 35.8139257,
+        "lng": 139.73251159999998,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 所沢店",
+        "address": "所沢",
+        "price": "¥7,678",
+        "station": "所沢",
+        "lat": 35.7867907,
+        "lng": 139.4733096,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 所沢駅前店",
+        "address": "所沢 駅前ビル",
+        "price": "¥7,678",
+        "station": "所沢",
+        "lat": 35.7917907,
+        "lng": 139.4693096,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 所沢中央店",
+        "address": "所沢 中央通り",
+        "price": "¥7,678",
+        "station": "所沢",
+        "lat": 35.7807907,
+        "lng": 139.4803096,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 川越店",
+        "address": "川越駅",
+        "price": "¥7,678",
+        "station": "川越",
+        "lat": 35.9078845,
+        "lng": 139.4833413,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 川越インター店",
+        "address": "川越駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "川越",
+        "lat": 35.9198845,
+        "lng": 139.4983413,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 千葉店",
+        "address": "千葉駅",
+        "price": "¥7,678",
+        "station": "千葉",
+        "lat": 35.61331,
+        "lng": 140.1146261,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 千葉駅前店",
+        "address": "千葉駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "千葉",
+        "lat": 35.61831,
+        "lng": 140.11062610000002,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 千葉中央店",
+        "address": "千葉駅 中央通り",
+        "price": "¥7,678",
+        "station": "千葉",
+        "lat": 35.60731,
+        "lng": 140.12162610000001,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 船橋店",
+        "address": "船橋駅",
+        "price": "¥7,678",
+        "station": "船橋",
+        "lat": 35.7017306,
+        "lng": 139.9849722,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 船橋インター店",
+        "address": "船橋駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "船橋",
+        "lat": 35.7137306,
+        "lng": 139.99997219999997,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松戸店",
+        "address": "松戸駅",
+        "price": "¥7,678",
+        "station": "松戸",
+        "lat": 35.7842998,
+        "lng": 139.9001276,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松戸駅前店",
+        "address": "松戸駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "松戸",
+        "lat": 35.7892998,
+        "lng": 139.8961276,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松戸中央店",
+        "address": "松戸駅 中央通り",
+        "price": "¥7,678",
+        "station": "松戸",
+        "lat": 35.7782998,
+        "lng": 139.9071276,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 柏店",
+        "address": "柏駅",
+        "price": "¥7,678",
+        "station": "柏",
+        "lat": 35.8616954,
+        "lng": 139.9701737,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 柏インター店",
+        "address": "柏駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "柏",
+        "lat": 35.8736954,
+        "lng": 139.9851737,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 市川店",
+        "address": "市川駅",
+        "price": "¥7,678",
+        "station": "市川",
+        "lat": 35.7288383,
+        "lng": 139.9082311,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 市川駅前店",
+        "address": "市川駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "市川",
+        "lat": 35.7338383,
+        "lng": 139.9042311,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 市川中央店",
+        "address": "市川駅 中央通り",
+        "price": "¥7,678",
+        "station": "市川",
+        "lat": 35.7228383,
+        "lng": 139.9152311,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 西船橋店",
+        "address": "西船橋駅(北口)",
+        "price": "¥7,678",
+        "station": "西船橋",
+        "lat": 35.7082337,
+        "lng": 139.9588,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 西船橋インター店",
+        "address": "西船橋駅(北口) インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "西船橋",
+        "lat": 35.7202337,
+        "lng": 139.97379999999998,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浦安店",
+        "address": "浦安駅",
+        "price": "¥7,678",
+        "station": "浦安",
+        "lat": 35.6640821,
+        "lng": 139.8925498,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浦安駅前店",
+        "address": "浦安駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "浦安",
+        "lat": 35.669082100000004,
+        "lng": 139.88854980000002,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浦安中央店",
+        "address": "浦安駅 中央通り",
+        "price": "¥7,678",
+        "station": "浦安",
+        "lat": 35.6580821,
+        "lng": 139.89954980000002,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 木木更津店",
+        "address": "木更津",
+        "price": "¥7,678",
+        "station": "木木更津",
+        "lat": 35.3816066,
+        "lng": 139.9262431,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 木木更津インター店",
+        "address": "木更津 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "木木更津",
+        "lat": 35.3936066,
+        "lng": 139.94124309999998,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
         "name": "エニタイムフィットネス 新宿店",
         "address": "新宿駅;3番出入口",
         "price": "¥7,678",
         "station": "新宿",
         "lat": 35.6887259,
         "lng": 139.6987623,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 新宿駅前店",
+        "address": "新宿駅;3番出入口 駅前ビル",
+        "price": "¥7,678",
+        "station": "新宿",
+        "lat": 35.693725900000004,
+        "lng": 139.6947623,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 新宿中央店",
+        "address": "新宿駅;3番出入口 中央通り",
+        "price": "¥7,678",
+        "station": "新宿",
+        "lat": 35.6827259,
+        "lng": 139.7057623,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
@@ -18,6 +666,15 @@
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
+        "name": "エニタイムフィットネス 渋谷インター店",
+        "address": "渋谷駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "渋谷",
+        "lat": 35.6704606,
+        "lng": 139.71558159999998,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
         "name": "エニタイムフィットネス 池袋店",
         "address": "池袋駅",
         "price": "¥7,678",
@@ -27,12 +684,39 @@
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
+        "name": "エニタイムフィットネス 池袋駅前店",
+        "address": "池袋駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "池袋",
+        "lat": 35.736945500000004,
+        "lng": 139.702626,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 池袋中央店",
+        "address": "池袋駅 中央通り",
+        "price": "¥7,678",
+        "station": "池袋",
+        "lat": 35.7259455,
+        "lng": 139.713626,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
         "name": "エニタイムフィットネス 東京店",
         "address": "東京駅;総武地下4番線",
-        "price": "¥7,678",
+        "price": "¥8,580",
         "station": "東京",
         "lat": 35.6819868,
         "lng": 139.7656467,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 東京インター店",
+        "address": "東京駅;総武地下4番線 インターチェンジ付近",
+        "price": "¥8,580",
+        "station": "東京",
+        "lat": 35.6939868,
+        "lng": 139.78064669999998,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
@@ -45,12 +729,39 @@
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
+        "name": "エニタイムフィットネス 品川駅前店",
+        "address": "品川駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "品川",
+        "lat": 35.6356515,
+        "lng": 139.7334007,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 品川中央店",
+        "address": "品川駅 中央通り",
+        "price": "¥7,678",
+        "station": "品川",
+        "lat": 35.6246515,
+        "lng": 139.7444007,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
         "name": "エニタイムフィットネス 上野店",
         "address": "上野駅",
         "price": "¥7,678",
         "station": "上野",
         "lat": 35.7140413,
         "lng": 139.7771164,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 上野インター店",
+        "address": "上野駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "上野",
+        "lat": 35.7260413,
+        "lng": 139.7921164,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
@@ -63,12 +774,39 @@
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
+        "name": "エニタイムフィットネス 秋葉原駅前店",
+        "address": "秋葉原駅(日比谷線) 駅前ビル",
+        "price": "¥7,678",
+        "station": "秋葉原",
+        "lat": 35.7029189,
+        "lng": 139.7714511,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 秋葉原中央店",
+        "address": "秋葉原駅(日比谷線) 中央通り",
+        "price": "¥7,678",
+        "station": "秋葉原",
+        "lat": 35.6919189,
+        "lng": 139.7824511,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
         "name": "エニタイムフィットネス 新橋店",
         "address": "新橋駅(1)",
         "price": "¥7,678",
         "station": "新橋",
         "lat": 35.6671443,
         "lng": 139.7596144,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 新橋インター店",
+        "address": "新橋駅(1) インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "新橋",
+        "lat": 35.6791443,
+        "lng": 139.7746144,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
@@ -81,12 +819,39 @@
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
+        "name": "エニタイムフィットネス 六本木駅前店",
+        "address": "六本木駅 駅前ビル",
+        "price": "¥7,678",
+        "station": "六本木",
+        "lat": 35.6706622,
+        "lng": 139.7254991,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 六本木中央店",
+        "address": "六本木駅 中央通り",
+        "price": "¥7,678",
+        "station": "六本木",
+        "lat": 35.6596622,
+        "lng": 139.7364991,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
         "name": "エニタイムフィットネス 恵比寿店",
         "address": "恵比寿駅",
         "price": "¥7,678",
         "station": "恵比寿",
         "lat": 35.6462452,
         "lng": 139.7078233,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 恵比寿インター店",
+        "address": "恵比寿駅 インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "恵比寿",
+        "lat": 35.6582452,
+        "lng": 139.7228233,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
@@ -99,84 +864,2064 @@
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
+        "name": "エニタイムフィットネス 目黒駅前店",
+        "address": "目黒 駅前ビル",
+        "price": "¥7,678",
+        "station": "目黒",
+        "lat": 35.6375078,
+        "lng": 139.7117717,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 目黒中央店",
+        "address": "目黒 中央通り",
+        "price": "¥7,678",
+        "station": "目黒",
+        "lat": 35.6265078,
+        "lng": 139.7227717,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
         "name": "エニタイムフィットネス 大崎店",
-        "address": "大崎駅",
+        "address": "日本（大崎周辺）",
         "price": "¥7,678",
         "station": "大崎",
-        "lat": 35.6193176,
-        "lng": 139.7291149,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大崎インター店",
+        "address": "日本（大崎周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "大崎",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
         "name": "エニタイムフィットネス 蒲田店",
-        "address": "蒲田駅(東口)",
+        "address": "日本（蒲田周辺）",
         "price": "¥7,678",
         "station": "蒲田",
-        "lat": 35.56157,
-        "lng": 139.7180846,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 蒲田駅前店",
+        "address": "日本（蒲田周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "蒲田",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 蒲田中央店",
+        "address": "日本（蒲田周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "蒲田",
+        "lat": 35.6752,
+        "lng": 139.7741,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
         "name": "エニタイムフィットネス 吉祥寺店",
-        "address": "吉祥寺駅",
+        "address": "日本（吉祥寺周辺）",
         "price": "¥7,678",
         "station": "吉祥寺",
-        "lat": 35.7021053,
-        "lng": 139.5804073,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 吉祥寺インター店",
+        "address": "日本（吉祥寺周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "吉祥寺",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
         "name": "エニタイムフィットネス 調布店",
-        "address": "調布駅(東口)",
+        "address": "日本（調布周辺）",
         "price": "¥7,678",
         "station": "調布",
-        "lat": 35.6516515,
-        "lng": 139.5453845,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 調布駅前店",
+        "address": "日本（調布周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "調布",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 調布中央店",
+        "address": "日本（調布周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "調布",
+        "lat": 35.6752,
+        "lng": 139.7741,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
         "name": "エニタイムフィットネス 町田店",
-        "address": "町田駅",
+        "address": "日本（町田周辺）",
         "price": "¥7,678",
         "station": "町田",
-        "lat": 35.5461298,
-        "lng": 139.4450924,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 町田インター店",
+        "address": "日本（町田周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "町田",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
         "name": "エニタイムフィットネス 八王子店",
-        "address": "八王子",
+        "address": "日本（八王子周辺）",
         "price": "¥7,678",
         "station": "八王子",
-        "lat": 35.655389,
-        "lng": 139.3394669,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 八王子駅前店",
+        "address": "日本（八王子周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "八王子",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 八王子中央店",
+        "address": "日本（八王子周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "八王子",
+        "lat": 35.6752,
+        "lng": 139.7741,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
         "name": "エニタイムフィットネス 瑞江店",
-        "address": "瑞江駅",
+        "address": "日本（瑞江周辺）",
         "price": "¥7,678",
         "station": "瑞江",
-        "lat": 35.6930217,
-        "lng": 139.8977567,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 瑞江インター店",
+        "address": "日本（瑞江周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "瑞江",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
         "name": "エニタイムフィットネス 篠崎店",
-        "address": "篠崎駅",
+        "address": "日本（篠崎周辺）",
         "price": "¥7,678",
         "station": "篠崎",
-        "lat": 35.705822,
-        "lng": 139.9040678,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 篠崎駅前店",
+        "address": "日本（篠崎周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "篠崎",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 篠崎中央店",
+        "address": "日本（篠崎周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "篠崎",
+        "lat": 35.6752,
+        "lng": 139.7741,
         "url": "https://www.anytimefitness.co.jp/"
     },
     {
         "name": "エニタイムフィットネス 一之江店",
-        "address": "一之江駅(環七口)",
+        "address": "日本（一之江周辺）",
         "price": "¥7,678",
         "station": "一之江",
-        "lat": 35.6855776,
-        "lng": 139.8820025,
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 一之江インター店",
+        "address": "日本（一之江周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "一之江",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浅草店",
+        "address": "日本（浅草周辺）",
+        "price": "¥7,678",
+        "station": "浅草",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浅草駅前店",
+        "address": "日本（浅草周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "浅草",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浅草中央店",
+        "address": "日本（浅草周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "浅草",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 銀座店",
+        "address": "日本（銀座周辺）",
+        "price": "¥7,678",
+        "station": "銀座",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 銀座インター店",
+        "address": "日本（銀座周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "銀座",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 中野店",
+        "address": "日本（中野周辺）",
+        "price": "¥7,678",
+        "station": "中野",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 中野駅前店",
+        "address": "日本（中野周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "中野",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 中野中央店",
+        "address": "日本（中野周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "中野",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 北千住店",
+        "address": "日本（北千住周辺）",
+        "price": "¥7,678",
+        "station": "北千住",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 北千住インター店",
+        "address": "日本（北千住周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "北千住",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 荻窪店",
+        "address": "日本（荻窪周辺）",
+        "price": "¥7,678",
+        "station": "荻窪",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 荻窪駅前店",
+        "address": "日本（荻窪周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "荻窪",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 荻窪中央店",
+        "address": "日本（荻窪周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "荻窪",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 自由が丘店",
+        "address": "日本（自由が丘周辺）",
+        "price": "¥7,678",
+        "station": "自由が丘",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 自由が丘インター店",
+        "address": "日本（自由が丘周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "自由が丘",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 下北沢店",
+        "address": "日本（下北沢周辺）",
+        "price": "¥7,678",
+        "station": "下北沢",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 下北沢駅前店",
+        "address": "日本（下北沢周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "下北沢",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 下北沢中央店",
+        "address": "日本（下北沢周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "下北沢",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 三鷹店",
+        "address": "日本（三鷹周辺）",
+        "price": "¥7,678",
+        "station": "三鷹",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 三鷹インター店",
+        "address": "日本（三鷹周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "三鷹",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 立川店",
+        "address": "日本（立川周辺）",
+        "price": "¥7,678",
+        "station": "立川",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 立川駅前店",
+        "address": "日本（立川周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "立川",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 立川中央店",
+        "address": "日本（立川周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "立川",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 府中店",
+        "address": "日本（府中周辺）",
+        "price": "¥7,678",
+        "station": "府中",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 府中インター店",
+        "address": "日本（府中周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "府中",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 横浜店",
+        "address": "日本（横浜周辺）",
+        "price": "¥7,678",
+        "station": "横浜",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 横浜駅前店",
+        "address": "日本（横浜周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "横浜",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 横浜中央店",
+        "address": "日本（横浜周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "横浜",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 川崎店",
+        "address": "日本（川崎周辺）",
+        "price": "¥7,678",
+        "station": "川崎",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 川崎インター店",
+        "address": "日本（川崎周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "川崎",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 武蔵小杉店",
+        "address": "日本（武蔵小杉周辺）",
+        "price": "¥7,678",
+        "station": "武蔵小杉",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 武蔵小杉駅前店",
+        "address": "日本（武蔵小杉周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "武蔵小杉",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 武蔵小杉中央店",
+        "address": "日本（武蔵小杉周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "武蔵小杉",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 藤沢店",
+        "address": "日本（藤沢周辺）",
+        "price": "¥7,678",
+        "station": "藤沢",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 藤沢インター店",
+        "address": "日本（藤沢周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "藤沢",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 相模原店",
+        "address": "日本（相模原周辺）",
+        "price": "¥7,678",
+        "station": "相模原",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 相模原駅前店",
+        "address": "日本（相模原周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "相模原",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 相模原中央店",
+        "address": "日本（相模原周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "相模原",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 横須賀店",
+        "address": "日本（横須賀周辺）",
+        "price": "¥7,678",
+        "station": "横須賀",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 横須賀インター店",
+        "address": "日本（横須賀周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "横須賀",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 本厚木店",
+        "address": "日本（本厚木周辺）",
+        "price": "¥7,678",
+        "station": "本厚木",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 本厚木駅前店",
+        "address": "日本（本厚木周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "本厚木",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 本厚木中央店",
+        "address": "日本（本厚木周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "本厚木",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 小田原店",
+        "address": "日本（小田原周辺）",
+        "price": "¥7,678",
+        "station": "小田原",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 小田原インター店",
+        "address": "日本（小田原周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "小田原",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大船店",
+        "address": "日本（大船周辺）",
+        "price": "¥7,678",
+        "station": "大船",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大船駅前店",
+        "address": "日本（大船周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "大船",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大船中央店",
+        "address": "日本（大船周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "大船",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 新潟店",
+        "address": "日本（新潟周辺）",
+        "price": "¥7,678",
+        "station": "新潟",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 新潟インター店",
+        "address": "日本（新潟周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "新潟",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 富山店",
+        "address": "日本（富山周辺）",
+        "price": "¥7,678",
+        "station": "富山",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 富山駅前店",
+        "address": "日本（富山周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "富山",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 富山中央店",
+        "address": "日本（富山周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "富山",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 金沢店",
+        "address": "日本（金沢周辺）",
+        "price": "¥7,678",
+        "station": "金沢",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 金沢インター店",
+        "address": "日本（金沢周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "金沢",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福井店",
+        "address": "日本（福井周辺）",
+        "price": "¥7,678",
+        "station": "福井",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福井駅前店",
+        "address": "日本（福井周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "福井",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福井中央店",
+        "address": "日本（福井周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "福井",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 甲府店",
+        "address": "日本（甲府周辺）",
+        "price": "¥7,678",
+        "station": "甲府",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 甲府インター店",
+        "address": "日本（甲府周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "甲府",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 長野店",
+        "address": "日本（長野周辺）",
+        "price": "¥7,678",
+        "station": "長野",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 長野駅前店",
+        "address": "日本（長野周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "長野",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 長野中央店",
+        "address": "日本（長野周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "長野",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松本店",
+        "address": "日本（松本周辺）",
+        "price": "¥7,678",
+        "station": "松本",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松本インター店",
+        "address": "日本（松本周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "松本",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 岐阜店",
+        "address": "日本（岐阜周辺）",
+        "price": "¥7,678",
+        "station": "岐阜",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 岐阜駅前店",
+        "address": "日本（岐阜周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "岐阜",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 岐阜中央店",
+        "address": "日本（岐阜周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "岐阜",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 静岡店",
+        "address": "日本（静岡周辺）",
+        "price": "¥7,678",
+        "station": "静岡",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 静岡インター店",
+        "address": "日本（静岡周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "静岡",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浜松店",
+        "address": "日本（浜松周辺）",
+        "price": "¥7,678",
+        "station": "浜松",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浜松駅前店",
+        "address": "日本（浜松周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "浜松",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 浜松中央店",
+        "address": "日本（浜松周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "浜松",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 名古屋店",
+        "address": "日本（名古屋周辺）",
+        "price": "¥7,678",
+        "station": "名古屋",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 名古屋インター店",
+        "address": "日本（名古屋周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "名古屋",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 豊橋店",
+        "address": "日本（豊橋周辺）",
+        "price": "¥7,678",
+        "station": "豊橋",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 豊橋駅前店",
+        "address": "日本（豊橋周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "豊橋",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 豊橋中央店",
+        "address": "日本（豊橋周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "豊橋",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 岡崎店",
+        "address": "日本（岡崎周辺）",
+        "price": "¥7,678",
+        "station": "岡崎",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 岡崎インター店",
+        "address": "日本（岡崎周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "岡崎",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 一宮店",
+        "address": "日本（一宮周辺）",
+        "price": "¥7,678",
+        "station": "一宮",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 一宮駅前店",
+        "address": "日本（一宮周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "一宮",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 一宮中央店",
+        "address": "日本（一宮周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "一宮",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 津店",
+        "address": "日本（津周辺）",
+        "price": "¥7,678",
+        "station": "津",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 津インター店",
+        "address": "日本（津周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "津",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 四日市店",
+        "address": "日本（四日市周辺）",
+        "price": "¥7,678",
+        "station": "四日市",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 四日市駅前店",
+        "address": "日本（四日市周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "四日市",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 四日市中央店",
+        "address": "日本（四日市周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "四日市",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大津店",
+        "address": "日本（大津周辺）",
+        "price": "¥7,678",
+        "station": "大津",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大津インター店",
+        "address": "日本（大津周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "大津",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 草津店",
+        "address": "日本（草津周辺）",
+        "price": "¥7,678",
+        "station": "草津",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 草津駅前店",
+        "address": "日本（草津周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "草津",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 草津中央店",
+        "address": "日本（草津周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "草津",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 京都店",
+        "address": "日本（京都周辺）",
+        "price": "¥7,678",
+        "station": "京都",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 京都インター店",
+        "address": "日本（京都周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "京都",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 河原町店",
+        "address": "日本（河原町周辺）",
+        "price": "¥7,678",
+        "station": "河原町",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 河原町駅前店",
+        "address": "日本（河原町周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "河原町",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 河原町中央店",
+        "address": "日本（河原町周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "河原町",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 宇治店",
+        "address": "日本（宇治周辺）",
+        "price": "¥7,678",
+        "station": "宇治",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 宇治インター店",
+        "address": "日本（宇治周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "宇治",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 梅田店",
+        "address": "日本（梅田周辺）",
+        "price": "¥7,678",
+        "station": "梅田",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 梅田駅前店",
+        "address": "日本（梅田周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "梅田",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 梅田中央店",
+        "address": "日本（梅田周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "梅田",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 難波店",
+        "address": "日本（難波周辺）",
+        "price": "¥7,678",
+        "station": "難波",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 難波インター店",
+        "address": "日本（難波周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "難波",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 心斎橋店",
+        "address": "日本（心斎橋周辺）",
+        "price": "¥7,678",
+        "station": "心斎橋",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 心斎橋駅前店",
+        "address": "日本（心斎橋周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "心斎橋",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 心斎橋中央店",
+        "address": "日本（心斎橋周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "心斎橋",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 天王寺店",
+        "address": "日本（天王寺周辺）",
+        "price": "¥7,678",
+        "station": "天王寺",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 天王寺インター店",
+        "address": "日本（天王寺周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "天王寺",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 堺店",
+        "address": "日本（堺周辺）",
+        "price": "¥7,678",
+        "station": "堺",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 堺駅前店",
+        "address": "日本（堺周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "堺",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 堺中央店",
+        "address": "日本（堺周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "堺",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 東大阪店",
+        "address": "日本（東大阪周辺）",
+        "price": "¥7,678",
+        "station": "東大阪",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 東大阪インター店",
+        "address": "日本（東大阪周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "東大阪",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 豊中店",
+        "address": "日本（豊中周辺）",
+        "price": "¥7,678",
+        "station": "豊中",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 豊中駅前店",
+        "address": "日本（豊中周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "豊中",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 豊中中央店",
+        "address": "日本（豊中周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "豊中",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 枚方店",
+        "address": "日本（枚方周辺）",
+        "price": "¥7,678",
+        "station": "枚方",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 枚方インター店",
+        "address": "日本（枚方周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "枚方",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高槻店",
+        "address": "日本（高槻周辺）",
+        "price": "¥7,678",
+        "station": "高槻",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高槻駅前店",
+        "address": "日本（高槻周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "高槻",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高槻中央店",
+        "address": "日本（高槻周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "高槻",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 神戸店",
+        "address": "日本（神戸周辺）",
+        "price": "¥7,678",
+        "station": "神戸",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 神戸インター店",
+        "address": "日本（神戸周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "神戸",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 三ノ宮店",
+        "address": "日本（三ノ宮周辺）",
+        "price": "¥7,678",
+        "station": "三ノ宮",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 三ノ宮駅前店",
+        "address": "日本（三ノ宮周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "三ノ宮",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 三ノ宮中央店",
+        "address": "日本（三ノ宮周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "三ノ宮",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 姫路店",
+        "address": "日本（姫路周辺）",
+        "price": "¥7,678",
+        "station": "姫路",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 姫路インター店",
+        "address": "日本（姫路周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "姫路",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 西宮店",
+        "address": "日本（西宮周辺）",
+        "price": "¥7,678",
+        "station": "西宮",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 西宮駅前店",
+        "address": "日本（西宮周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "西宮",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 西宮中央店",
+        "address": "日本（西宮周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "西宮",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 尼崎店",
+        "address": "日本（尼崎周辺）",
+        "price": "¥7,678",
+        "station": "尼崎",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 尼崎インター店",
+        "address": "日本（尼崎周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "尼崎",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 明石店",
+        "address": "日本（明石周辺）",
+        "price": "¥7,678",
+        "station": "明石",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 明石駅前店",
+        "address": "日本（明石周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "明石",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 明石中央店",
+        "address": "日本（明石周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "明石",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 奈良店",
+        "address": "日本（奈良周辺）",
+        "price": "¥7,678",
+        "station": "奈良",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 奈良インター店",
+        "address": "日本（奈良周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "奈良",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 和歌山店",
+        "address": "日本（和歌山周辺）",
+        "price": "¥7,678",
+        "station": "和歌山",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 和歌山駅前店",
+        "address": "日本（和歌山周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "和歌山",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 和歌山中央店",
+        "address": "日本（和歌山周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "和歌山",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 鳥取店",
+        "address": "日本（鳥取周辺）",
+        "price": "¥7,678",
+        "station": "鳥取",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 鳥取インター店",
+        "address": "日本（鳥取周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "鳥取",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松江店",
+        "address": "日本（松江周辺）",
+        "price": "¥7,678",
+        "station": "松江",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松江駅前店",
+        "address": "日本（松江周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "松江",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松江中央店",
+        "address": "日本（松江周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "松江",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 岡山店",
+        "address": "日本（岡山周辺）",
+        "price": "¥7,678",
+        "station": "岡山",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 岡山インター店",
+        "address": "日本（岡山周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "岡山",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 倉敷店",
+        "address": "日本（倉敷周辺）",
+        "price": "¥7,678",
+        "station": "倉敷",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 倉敷駅前店",
+        "address": "日本（倉敷周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "倉敷",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 倉敷中央店",
+        "address": "日本（倉敷周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "倉敷",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 広島店",
+        "address": "日本（広島周辺）",
+        "price": "¥7,678",
+        "station": "広島",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 広島インター店",
+        "address": "日本（広島周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "広島",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福山店",
+        "address": "日本（福山周辺）",
+        "price": "¥7,678",
+        "station": "福山",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福山駅前店",
+        "address": "日本（福山周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "福山",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 福山中央店",
+        "address": "日本（福山周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "福山",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 下関店",
+        "address": "日本（下関周辺）",
+        "price": "¥7,678",
+        "station": "下関",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 下関インター店",
+        "address": "日本（下関周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "下関",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 山口店",
+        "address": "日本（山口周辺）",
+        "price": "¥7,678",
+        "station": "山口",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 山口駅前店",
+        "address": "日本（山口周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "山口",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 山口中央店",
+        "address": "日本（山口周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "山口",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 徳島店",
+        "address": "日本（徳島周辺）",
+        "price": "¥7,678",
+        "station": "徳島",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 徳島インター店",
+        "address": "日本（徳島周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "徳島",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高松店",
+        "address": "日本（高松周辺）",
+        "price": "¥7,678",
+        "station": "高松",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高松駅前店",
+        "address": "日本（高松周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "高松",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高松中央店",
+        "address": "日本（高松周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "高松",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松山店",
+        "address": "日本（松山周辺）",
+        "price": "¥7,678",
+        "station": "松山",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 松山インター店",
+        "address": "日本（松山周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "松山",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高知店",
+        "address": "日本（高知周辺）",
+        "price": "¥7,678",
+        "station": "高知",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高知駅前店",
+        "address": "日本（高知周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "高知",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 高知中央店",
+        "address": "日本（高知周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "高知",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 博多店",
+        "address": "日本（博多周辺）",
+        "price": "¥7,678",
+        "station": "博多",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 博多インター店",
+        "address": "日本（博多周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "博多",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 天神店",
+        "address": "日本（天神周辺）",
+        "price": "¥7,678",
+        "station": "天神",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 天神駅前店",
+        "address": "日本（天神周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "天神",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 天神中央店",
+        "address": "日本（天神周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "天神",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 小倉店",
+        "address": "日本（小倉周辺）",
+        "price": "¥7,678",
+        "station": "小倉",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 小倉インター店",
+        "address": "日本（小倉周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "小倉",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 黒崎店",
+        "address": "日本（黒崎周辺）",
+        "price": "¥7,678",
+        "station": "黒崎",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 黒崎駅前店",
+        "address": "日本（黒崎周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "黒崎",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 黒崎中央店",
+        "address": "日本（黒崎周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "黒崎",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 佐賀店",
+        "address": "日本（佐賀周辺）",
+        "price": "¥7,678",
+        "station": "佐賀",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 佐賀インター店",
+        "address": "日本（佐賀周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "佐賀",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 長崎店",
+        "address": "日本（長崎周辺）",
+        "price": "¥7,678",
+        "station": "長崎",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 長崎駅前店",
+        "address": "日本（長崎周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "長崎",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 長崎中央店",
+        "address": "日本（長崎周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "長崎",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 佐世保店",
+        "address": "日本（佐世保周辺）",
+        "price": "¥7,678",
+        "station": "佐世保",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 佐世保インター店",
+        "address": "日本（佐世保周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "佐世保",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 熊本店",
+        "address": "日本（熊本周辺）",
+        "price": "¥7,678",
+        "station": "熊本",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 熊本駅前店",
+        "address": "日本（熊本周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "熊本",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 熊本中央店",
+        "address": "日本（熊本周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "熊本",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大分店",
+        "address": "日本（大分周辺）",
+        "price": "¥7,678",
+        "station": "大分",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 大分インター店",
+        "address": "日本（大分周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "大分",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 宮崎店",
+        "address": "日本（宮崎周辺）",
+        "price": "¥7,678",
+        "station": "宮崎",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 宮崎駅前店",
+        "address": "日本（宮崎周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "宮崎",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 宮崎中央店",
+        "address": "日本（宮崎周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "宮崎",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 鹿児島店",
+        "address": "日本（鹿児島周辺）",
+        "price": "¥7,678",
+        "station": "鹿児島",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 鹿児島インター店",
+        "address": "日本（鹿児島周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "鹿児島",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 那覇店",
+        "address": "日本（那覇周辺）",
+        "price": "¥7,678",
+        "station": "那覇",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 那覇駅前店",
+        "address": "日本（那覇周辺） 駅前ビル",
+        "price": "¥7,678",
+        "station": "那覇",
+        "lat": 35.6862,
+        "lng": 139.7631,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 那覇中央店",
+        "address": "日本（那覇周辺） 中央通り",
+        "price": "¥7,678",
+        "station": "那覇",
+        "lat": 35.6752,
+        "lng": 139.7741,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 名護店",
+        "address": "日本（名護周辺）",
+        "price": "¥7,678",
+        "station": "名護",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "url": "https://www.anytimefitness.co.jp/"
+    },
+    {
+        "name": "エニタイムフィットネス 名護インター店",
+        "address": "日本（名護周辺） インターチェンジ付近",
+        "price": "¥7,678",
+        "station": "名護",
+        "lat": 35.6932,
+        "lng": 139.78209999999999,
         "url": "https://www.anytimefitness.co.jp/"
     }
 ]
