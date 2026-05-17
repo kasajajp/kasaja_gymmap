@@ -1,0 +1,38 @@
+[
+    {
+        "name": "エニタイムフィットネス 瑞江店",
+        "address": "東京都江戸川区瑞江1-19-1",
+        "price": "¥7,150",
+        "station": "瑞江",
+        "url": "https://www.anytimefitness.co.jp/mizue/",
+        "lat": 35.6812,
+        "lng": 139.7671
+    },
+    {
+        "name": "エニタイムフィットネス 篠崎店",
+        "address": "東京都江戸川区篠崎町7-21",
+        "price": "¥7,480",
+        "station": "篠崎",
+        "url": "https://www.anytimefitness.co.jp/shinozaki/",
+        "lat": 35.6812,
+        "lng": 139.7671
+    },
+    {
+        "name": "エニタイムフィットネス 渋谷初台店",
+        "address": "東京都渋谷区本町1-21-1",
+        "price": "¥8,250",
+        "station": "初台",
+        "url": "https://www.anytimefitness.co.jp/shibuyahatsudai/",
+        "lat": 35.6812,
+        "lng": 139.7671
+    },
+    {
+        "name": "エニタイムフィットネス 梅田東店",
+        "address": "大阪府大阪市北区神山町1-5",
+        "price": "¥7,920",
+        "station": "梅田",
+        "url": "https://www.anytimefitness.co.jp/umedahigashi/",
+        "lat": 35.6812,
+        "lng": 139.7671
+    }
+]
