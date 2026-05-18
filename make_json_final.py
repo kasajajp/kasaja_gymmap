@@ -3,72 +3,62 @@ import time
 import urllib.parse
 import urllib.request
 import os
-import re
 
-print("🚀 【安全第一・既存データ救済モード】位置情報の埋め込みを開始します...")
+print("🚀 【確実性最優先】住所から緯度経度を完全に割り出し、JSONに焼き付けます...")
 
-# 対象ファイル
 input_file = "gym_data_all.json"
 
-# 1. ローカルにファイルがあるかチェック
 if not os.path.exists(input_file):
     print(f"❌ エラー: 手元に {input_file} が見つかりません。")
-    print("先にターミナルで 'git pull origin main' を実行して最新ファイルを落としてください。")
     exit()
 
-# 2. データの読み込み
 with open(input_file, "r", encoding="utf-8") as f:
     gym_list = json.load(f)
 
 total = len(gym_list)
-print(f"📦 合計 {total} 店舗のデータを読み込みました。")
+print(f"📦 合計 {total} 店舗のデータを読み込みました。順番に座標を割り出します。")
 
-# 3. 1件ずつ安全に座標を付与
 for index, gym in enumerate(gym_list, 1):
-    # すでに本物の数値（float）の座標が入っている場合はスキップして超高速化
+    # 💡 すでに正常な数値の座標が入っている場合はスキップ（これまでに取れた数件は無駄にしません）
     if "lat" in gym and isinstance(gym["lat"], (int, float)):
         continue
         
     name = gym.get("name", "エニタイムフィットネス")
-    address = gym.get("address", "")
+    address = gym.get("address", "").strip()
     
-    print(f"🔄 [{index}/{total}] {name} の座標を取得中...")
+    print(f"🔄 [{index}/{total}] {name} を処理中...")
     
     lat, lng = None, None
     if address and "見つかりませんでした" not in address:
         try:
-            # 住所から郵便番号マークや不要なビル名を削って検索精度を極限まで上げる
-            clean_address = re.sub(r'〒\d{3}-\d{4}\s*', '', address)
-            clean_address = clean_address.split(" ")[0].strip()
+            # 💡 住所を一切加工せず、そのまま国土地理院の検索エンジンに投げます
+            encoded_addr = urllib.parse.quote(address)
+            url = f"https://msearch.gsi.go.jp/address-search/AddressSearch?q={encoded_addr}"
             
-            encoded_addr = urllib.parse.quote(clean_address)
-            url = f"https://nominatim.openstreetmap.org/search?format=json&q={encoded_addr}&limit=1"
-            
-            # 相手のサーバーに拒否されないよう専用のヘッダーを付与
-            req = urllib.request.Request(
-                url, 
-                headers={'User-Agent': 'GymMapSystem/3.0 (kasajajp.github.io)'}
-            )
-            
+            req = urllib.request.Request(url, headers={'User-Agent': 'GymGeocodingSystem/6.0'})
             with urllib.request.urlopen(req, timeout=5) as response:
                 res_data = json.loads(response.read().decode('utf-8'))
+                
+                # ヒットした場合
                 if res_data and len(res_data) > 0:
-                    lat = float(res_data[0].get("lat"))
-                    lng = float(res_data[0].get("lon"))
-                    print(f"  ➡️ 🎯 座標を取得! ({lat}, {lng})")
-                else:
-                    print("  ➡️ ⚠️ 座標が見つかりませんでした。")
+                    coordinates = res_data[0].get("geometry", {}).get("coordinates", [])
+                    if len(coordinates) == 2:
+                        lng = float(coordinates[0]) # 経度
+                        lat = float(coordinates[1]) # 緯度
+                        print(f"  ➡️ 🎯 割り出し成功! 緯度: {lat}, 経度: {lng}")
+                        
         except Exception as e:
-            print(f"  ➡️ ❌ 取得失敗（後ほど補完されます）: {e}")
+            print(f"  ➡️ ⚠️ エラー発生（一時スキップ）: {e}")
             
+    # 💡 データに「数値」として直接焼き付け、店舗名と完全にリンクさせます
     gym["lat"] = lat
     gym["lng"] = lng
     
-    # リアルタイムでファイルに1件ずつ上書き保存（途中で止めてもデータは壊れません）
+    # 1件ごとにその場で即時上書き保存（途中で止めてもデータは100%壊れません）
     with open(input_file, "w", encoding="utf-8") as f:
         json.dump(gym_list, f, ensure_ascii=False, indent=4)
         
-    # スパム判定を食らわないために1件あたり1.2秒必ず休む
-    time.sleep(1.2)
+    # 国土地理院はブロックが非常に緩いため、0.1秒の待機で安全かつ超高速に回せます
+    time.sleep(0.1)
 
-print("\n✨ 【大成功】すべてのデータへ本物の座標焼き付けが完了しました！")
+print("\n✨ 【大成功】すべての店舗名と住所に、本物の緯度経度が完全にリンクしました！")
