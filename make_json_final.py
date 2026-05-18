@@ -1,10 +1,11 @@
 import json
 import os
 import time
+import urllib.parse
+import urllib.request
 import re
-from playwright.sync_api import sync_playwright
 
-print("🚀 【Googleマップ解析モード】gym_data_all.json から緯度経度を割り出します...")
+print("🚀 【最安定モード】gym_data_all.json から緯度経度を割り出して書き込みます...")
 
 input_file = "gym_data_all.json"
 
@@ -12,65 +13,67 @@ if not os.path.exists(input_file):
     print(f"❌ エラー: 手元に {input_file} が見つかりません。")
     exit()
 
+# JSONファイルを読み込む
 with open(input_file, "r", encoding="utf-8") as f:
     gym_list = json.load(f)
 
 total = len(gym_list)
-print(f"📦 合計 {total} 店舗のデータを読み込みました。未取得の店舗をGoogleマップで検索します。")
+print(f"📦 合計 {total} 店舗のデータを読み込みました。")
 
-with sync_playwright() as p:
-    # 💡 相手にロボットだとバレないようにブラウザを起動
-    browser = p.chromium.launch(headless=False)  # 実際の動きを確認できるように画面を表示します
-    page = browser.new_page()
-
-    for index, gym in enumerate(gym_list, 1):
-        # すでに本物の数値の座標が入っている場合はスキップして高速化
-        if "lat" in gym and isinstance(gym["lat"], (int, float)):
-            continue
+for index, gym in enumerate(gym_list, 1):
+    # 💡 すでに正常な数値の座標が入っている店舗はスキップ（２回目以降の実行を高速化）
+    if "lat" in gym and isinstance(gym["lat"], (int, float)):
+        continue
+        
+    name = gym.get("name", "店舗")
+    address = gym.get("address", "").strip()
+    
+    lat, lng = None, None
+    
+    if address and "見つかりませんでした" not in address:
+        try:
+            # 🛠️ 住所クレンジング（これがないと国土地理院でエラーになります）
+            # 1. 「〒123-4567」の郵便番号部分を取り除く
+            clean_address = re.sub(r'〒?\d{3}-\d{4}\s*', '', address)
+            # 2. 全角スペースを半角スペースにする
+            clean_address = clean_address.replace("　", " ")
+            # 3. 建物名や階数（スペース以降の文字）をカットして純粋な番地だけにする
+            # 例：「沖縄県糸満市字兼城400番地 1F」 ➡️ 「沖縄県糸満市字兼城400番地」
+            clean_address = clean_address.split(" ")[0].strip()
             
-        name = gym.get("name", "")
-        address = gym.get("address", "").strip()
-        
-        print(f"🔄 [{index}/{total}] {name} を検索中...")
-        
-        lat, lng = None, None
-        if address and "見つかりませんでした" not in address:
-            try:
-                # 郵便番号だけ綺麗にカット
-                clean_address = re.sub(r'〒?\d{3}-\d{4}\s*', '', address)
+            # 国土地理院のジオコーディングAPIへリクエスト
+            encoded_addr = urllib.parse.quote(clean_address)
+            url = f"https://msearch.gsi.go.jp/address-search/AddressSearch?q={encoded_addr}"
+            
+            req = urllib.request.Request(url, headers={'User-Agent': 'GymGeocodingApp/1.0'})
+            with urllib.request.urlopen(req, timeout=5) as response:
+                res_data = json.loads(response.read().decode('utf-8'))
                 
-                # Googleマップの検索URLを直接生成
-                search_url = f"https://www.google.com/maps/search/{urllib.parse.quote(clean_address)}"
-                page.goto(search_url)
-                
-                # 地図が読み込まれるまで少し待機
-                page.wait_for_timeout(3000)
-                
-                # 💡 GoogleマップのURL（アドレスバー）には、必ず現在のピンの緯度経度が「@35.6812,139.7671」の形式で含まれます
-                current_url = page.url
-                match = re.search(r'@([\d.]+),([\d.]+)', current_url)
-                
-                if match:
-                    lat = float(match.group(1))
-                    lng = float(match.group(2))
-                    print(f"  ➡️ 🎯 Googleマップから座標を抽出成功! ({lat}, {lng})")
+                # 座標が見つかった場合
+                if res_data and len(res_data) > 0:
+                    coordinates = res_data[0].get("geometry", {}).get("coordinates", [])
+                    if len(coordinates) == 2:
+                        lng = float(coordinates[0]) # 経度
+                        lat = float(coordinates[1]) # 緯度
+                        print(f"🔄 [{index}/{total}] {name} ➡️ 🎯 座標確定! ({lat}, {lng})")
+                    else:
+                        print(f"🔄 [{index}/{total}] {name} ➡️ ⚠️ 座標の形が不正です")
                 else:
-                    print("  ➡️ ⚠️ URLから座標が読み取れませんでした。")
+                    print(f"🔄 [{index}/{total}] {name} ➡️ ❌ 住所がマッチしませんでした ({clean_address})")
                     
-            except Exception as e:
-                print(f"  ➡️ ❌ エラー発生: {e}")
-        
-        # 割り出した数値をJSONデータに直接リンクして保存
-        gym["lat"] = lat
-        gym["lng"] = lng
-        
-        # 1件ごとにその場で即時上書き保存
-        with open(input_file, "w", encoding="utf-8") as f:
-            json.dump(gym_list, f, ensure_ascii=False, indent=4)
+        except Exception as e:
+            print(f"🔄 [{index}/{total}] {name} ➡️ 💥 エラー発生: {e}")
+            time.sleep(1) # エラー時は少し待機
             
-        # 人間らしい動きにするため1秒休憩
-        time.sleep(1.0)
+    # データに直接「lat」「lng」という名前で数値を保存
+    gym["lat"] = lat
+    gym["lng"] = lng
+    
+    # 💥 大事：1件処理するごとにその場で即時上書き保存（途中で止めてもデータは壊れません）
+    with open(input_file, "w", encoding="utf-8") as f:
+        json.dump(gym_list, f, ensure_ascii=False, indent=4)
+        
+    # サーバーに怒られないように0.1秒だけ待つ
+    time.sleep(0.1)
 
-    browser.close()
-
-print("\n✨ 【完了】すべてのデータに本物の緯度経度が焼き付けられました！")
+print("\n✨ すべてのデータに本物の緯度経度が追加されました！")
