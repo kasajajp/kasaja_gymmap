@@ -3,47 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>エニタイムフィットネス マップ検索</title>
+    <title>GymMap - エニタイムフィットネス全国店舗の月額料金を地図で比較</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
-        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; display: flex; height: 100vh; background-color: #f4f4f9; }
-        #sidebar { width: 380px; background: white; box-shadow: 2px 0 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; z-index: 1001; }
-        #search-box { padding: 20px; background: #7331c6; color: white; display: flex; flex-direction: column; gap: 10px; }
-        #search-box h2 { margin: 0 0 5px 0; font-size: 18px; }
-        .search-row { display: flex; gap: 8px; }
-        #searchInput { flex: 1; padding: 10px; font-size: 15px; border: none; border-radius: 4px; }
-        #searchBtn { padding: 10px 15px; background: #ffbc00; color: #333; border: none; border-radius: 4px; cursor: pointer; font-size: 15px; font-weight: bold; transition: 0.2s; }
-        #searchBtn:hover { background: #e0a500; }
-        #results { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
-        .gym-card { padding: 15px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; cursor: pointer; transition: 0.2s; }
-        .gym-card:hover { background: #f9f5ff; border-color: #7331c6; }
-        .gym-name { font-weight: bold; color: #333; font-size: 16px; margin-bottom: 5px; }
-        .gym-info { font-size: 13px; color: #666; margin: 3px 0; }
-        .gym-distance { display: inline-block; margin-top: 5px; padding: 2px 6px; background: #eee; border-radius: 4px; font-size: 12px; font-weight: bold; color: #555; }
-        #map { flex: 1; height: 100%; }
-        .popup-link { display: inline-block; margin-top: 8px; padding: 5px 10px; background: #7331c6; color: white; text-decoration: none; border-radius: 4px; font-size: 12px; }
+        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f8f9fa; color: #333; }
+        
+        /* ヘッダー */
+        header { background: #fff; padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .logo { font-size: 22px; font-weight: bold; color: #3b236e; display: flex; align-items: center; gap: 8px; }
+        .nav-items { display: flex; gap: 20px; align-items: center; font-size: 14px; }
+        .nav-items img { height: 30px; }
+
+        /* メインバナー */
+        .hero-banner { background: #000; color: #fff; text-align: center; padding: 30px 20px; position: relative; }
+        .hero-title { font-size: 24px; font-weight: bold; margin-bottom: 20px; letter-spacing: 1px; }
+        .compare-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; max-width: 400px; margin: 0 auto 25px auto; padding: 15px; font-size: 13px; color: #ccc; }
+        .compare-prices { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 10px; font-size: 18px; color: #fff; }
+        .price-huge { font-size: 24px; font-weight: bold; color: #fff; }
+
+        /* 検索バー（黒バナー内） */
+        .search-wrapper { max-width: 500px; margin: 0 auto; display: flex; gap: 8px; }
+        .search-input-main { flex: 1; padding: 12px 20px; border: 1px solid #444; border-radius: 6px; background: #2c2c2e; color: #fff; font-size: 15px; }
+        .search-input-main::placeholder { color: #8e8e93; }
+        .btn-purple { background: #9d5bfa; color: white; border: none; border-radius: 6px; padding: 0 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .btn-gps { background: #9d5bfa; color: white; border: none; border-radius: 6px; padding: 0 15px; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+
+        /* フィルターエリア */
+        .filter-bar { background: #fff; margin: 20px auto; max-width: 1200px; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; flex-wrap: wrap; gap: 15px; align-items: center; font-size: 14px; }
+        .filter-select { padding: 8px 12px; border: 1px solid #e5e5ea; border-radius: 6px; background: #fff; color: #333; }
+        .slider-container { display: flex; align-items: center; gap: 10px; color: #666; }
+        .slider-badge { background: #9d5bfa; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+        .toggle-buttons { display: flex; background: #f2f2f7; padding: 3px; border-radius: 6px; }
+        .toggle-btn { border: none; padding: 6px 12px; border-radius: 4px; font-size: 13px; cursor: pointer; background: transparent; color: #666; }
+        .toggle-btn.active { background: #9d5bfa; color: white; font-weight: bold; }
+
+        /* メインコンテンツ（2カラム） */
+        .main-content { max-width: 1200px; margin: 0 auto; display: flex; gap: 20px; padding-bottom: 40px; }
+        .sidebar { width: 380px; display: flex; flex-direction: column; gap: 15px; }
+        .result-header { display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: bold; }
+        .result-count { background: #f2e7fe; color: #9d5bfa; padding: 2px 10px; border-radius: 12px; font-size: 12px; }
+        .results-scroll { height: 600px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+        
+        /* 店舗カード */
+        .gym-card { background: #fff; border: 1px solid #e5e5ea; border-radius: 8px; padding: 20px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .gym-card:hover { border-color: #9d5bfa; box-shadow: 0 4px 12px rgba(157,91,250,0.1); }
+        .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .gym-name { font-size: 16px; font-weight: bold; color: #1c1c1e; line-height: 1.4; }
+        .price-badge { background: #fff; border: 1px solid #9d5bfa; color: #9d5bfa; padding: 8px 12px; border-radius: 6px; text-align: right; font-size: 12px; font-weight: bold; }
+        .price-num { font-size: 16px; display: block; }
+        .gym-meta { font-size: 13px; color: #8e8e93; margin: 5px 0; display: flex; align-items: center; gap: 5px; }
+        .card-buttons { display: flex; gap: 8px; margin-top: 15px; }
+        .btn-card-detail { flex: 1; background: #9d5bfa; color: white; border: none; padding: 8px; border-radius: 6px; font-size: 12px; font-weight: bold; text-align: center; cursor: pointer; }
+        .btn-card-site { flex: 1; background: #fff; color: #9d5bfa; border: 1px solid #9d5bfa; padding: 8px; border-radius: 6px; font-size: 12px; font-weight: bold; text-align: center; text-decoration: none; }
+
+        /* マップ */
+        .map-wrapper { flex: 1; background: #fff; border-radius: 8px; border: 1px solid #e5e5ea; box-shadow: 0 2px 8px rgba(0,0,0,0.04); position: relative; display: flex; flex-direction: column; }
+        .map-header { padding: 15px 20px; font-weight: bold; border-bottom: 1px solid #e5e5ea; display: flex; justify-content: space-between; align-items: center; }
+        #map { width: 100%; height: 600px; border-radius: 0 0 8px 8px; }
     </style>
 </head>
 <body>
 
-    <div id="sidebar">
-        <div id="search-box">
-            <h2>Anytime Fitness 検索</h2>
-            <div class="search-row">
-                <input type="text" id="searchInput" placeholder="例: 葛西, 江戸川区" onkeypress="if(event.key==='Enter') searchGyms()">
-                <button id="searchBtn" onclick="searchGyms()">検索</button>
+    <header>
+        <div class="logo">🏃 GymMap</div>
+        <div class="nav-items">
+            <span>📝 記事一覧</span>
+            <span style="font-size:20px; display:flex; gap:10px;">👑 🏋️ 🧗 🏃</span>
+        </div>
+    </header>
+
+    <div class="hero-banner">
+        <div class="hero-title">エニタイムフィットネス全国店舗の月額料金を地図で比較</div>
+        <div class="compare-box">
+            <div>例えば... エニタイムフィットネスは全国どこでも利用できるのに</div>
+            <div>入会する店舗によって月額料金に大きな差があります</div>
+            <div class="compare-prices">
+                <span>A店 <span class="price-huge">9,800円</span></span>
+                <span style="color:#666;">/</span>
+                <span>B店 <span class="price-huge">6,800円</span></span>
             </div>
         </div>
-        <div id="results">
-            <div style="color: #999; text-align: center; margin-top: 20px;">検索ワードを入力してください</div>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-input-main" placeholder="駅名・地名で探す" onkeypress="if(event.key==='Enter') searchGyms()">
+            <button class="btn-purple" onclick="searchGyms()">🔍</button>
+            <button class="btn-gps">🎯 現在地で検索</button>
         </div>
     </div>
 
-    <div id="map"></div>
+    <div class="filter-bar">
+        <select class="filter-select"><option>エニタイムフィットネス</option></select>
+        <select class="filter-select"><option>すべてのプラン</option></select>
+        <div class="slider-container">料金: <input type="range" min="5000" max="15000" value="10000"> <span class="slider-badge">¥10,000</span></div>
+        <div class="slider-container">距離: <input type="range" min="1" max="50" value="10"> <span class="slider-badge">10km</span></div>
+        <div style="margin-left:auto; display:flex; align-items:center; gap:10px;">
+            <span>並び順:</span>
+            <div class="toggle-buttons">
+                <button class="toggle-btn active">料金順</button>
+                <button class="toggle-btn">距離順</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="sidebar">
+            <div class="result-header">
+                <span>検索結果</span>
+                <span class="result-count" id="resultCount">0店舗</span>
+            </div>
+            <div class="results-scroll" id="resultsList">
+                <div style="color: #8e8e93; text-align: center; margin-top: 40px; font-size:14px;">駅名や地名を入力して検索してください</div>
+            </div>
+        </div>
+
+        <div class="map-wrapper">
+            <div class="map-header">
+                <span>店舗マップ</span>
+                <span style="color:#9d5bfa; font-size:14px;">🗺️</span>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
 
     <script>
-        // 1. 地図の初期化
+        // 地図の初期化
         const map = L.map('map').setView([35.6812, 139.7671], 11);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
@@ -52,7 +135,7 @@
         let allGymData = [];
         let markers = [];
 
-        // 2. 本物の緯度経度が入ったデータを読み込む
+        // 本物のデータ読み込み
         fetch('gym_data_all.json')
             .then(response => response.json())
             .then(data => {
@@ -61,51 +144,53 @@
             })
             .catch(error => console.error("データ読み込みエラー:", error));
 
-        // 2点間の距離を計算する関数（三平方の定理）
-        defGetDistance = (lat1, lng1, lat2, lng2) => {
-            const r = 6371; // 地球の半径 (km)
+        // 距離計算関数
+        function defGetDistance(lat1, lng1, lat2, lng2) {
+            const r = 6371;
             const dLat = (lat2 - lat1) * Math.PI / 180;
             const dLng = (lng2 - lng1) * Math.PI / 180;
             const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
                       Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
                       Math.sin(dLng/2) * Math.sin(dLng/2);
             return 2 * r * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        };
+        }
 
         function clearMarkers() {
             markers.forEach(m => map.removeLayer(m));
             markers = [];
         }
 
-        // 3. 🔍 検索処理
+        // 🔍 あなたのデザインに完全に連動するバグ修正版検索
         function searchGyms() {
             const keyword = document.getElementById('searchInput').value.trim();
             if (!keyword) return;
 
-            // ① まず「キーワード（葛西）」が文字として含まれる店舗だけを厳密に抽出
+            // ① 文字列に検索ワードが含まれる店舗だけを100%厳密に抽出
             const baseGyms = allGymData.filter(gym => {
                 return (gym.address || "").includes(keyword) || (gym.name || "").includes(keyword);
             });
 
             clearMarkers();
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '';
+            const listDiv = document.getElementById('resultsList');
+            const countSpan = document.getElementById('resultCount');
+            listDiv.innerHTML = '';
 
             if (baseGyms.length === 0) {
-                resultsDiv.innerHTML = '<div style="color:red; text-align:center; padding:20px;">店舗が見つかりませんでした。</div>';
+                countSpan.innerText = "0店舗";
+                listDiv.innerHTML = '<div style="color:#ff3b30; text-align:center; padding:20px; font-size:14px;">該当する店舗が見つかりませんでした。</div>';
                 return;
             }
 
-            // ② 抽出された最初の店舗の座標を「基準点」にする
+            // ② 最初の有効な店舗を基準座標にする
             const centerGym = baseGyms.find(g => g.lat && g.lng);
             if (!centerGym) {
-                resultsDiv.innerHTML = '<div style="color:red; text-align:center; padding:20px;">該当店舗の座標データがありません。</div>';
+                listDiv.innerHTML = '<div style="color:#ff3b30; text-align:center; padding:20px; font-size:14px;">座標データが見つかりません。</div>';
                 return;
             }
             const baseLat = centerGym.lat;
             const baseLng = centerGym.lng;
 
-            // ③ 基準点からの距離を計算して、近い順に並び替える
+            // ③ 距離を計算してソート
             const processedGyms = baseGyms.map(gym => {
                 let distance = 9999;
                 if (gym.lat && gym.lng) {
@@ -114,36 +199,48 @@
                 return { ...gym, distance: distance };
             }).sort((a, b) => a.distance - b.distance);
 
-            // ④ 左側の一覧と、右側のマップにピンを同時に描画
-            processedGyms.forEach((gym, i) => {
+            countSpan.innerText = `${processedGyms.length}店舗`;
+
+            // ④ あなたのオリジナルデザインのカードを生成して描画
+            processedGyms.forEach(gym => {
                 if (!gym.lat || !gym.lng) return;
 
-                // 地図にピンを立てる
+                // 地図ピン
                 const marker = L.marker([gym.lat, gym.lng]).addTo(map)
-                    .bindPopup(`<b>${gym.name}</b><br>${gym.address}<br>料金: ${gym.price}<br><a class="popup-link" href="${gym.url}" target="_blank">店舗サイト</a>`);
+                    .bindPopup(`<b>${gym.name}</b><br>${gym.address}<br>料金: ${gym.price}<br><a href="${gym.url}" target="_blank" style="color:#9d5bfa; font-weight:bold;">店舗サイトへ</a>`);
                 markers.push(marker);
 
-                // 左側のサイドバーにカードを生成
+                // カード（画像通りのスタイルを完全再現）
                 const card = document.createElement('div');
                 card.className = 'gym-card';
                 card.innerHTML = `
-                    <div class="gym-name">${gym.name}</div>
-                    <div class="gym-info">📍 ${gym.address}</div>
-                    <div class="gym-info">💳 料金: ${gym.price}</div>
-                    <div class="gym-distance">${keyword} から約 ${gym.distance.toFixed(1)} km</div>
+                    <div class="card-top">
+                        <div class="gym-name">${gym.name}</div>
+                        <div class="price-badge">
+                            <span>${gym.price.includes('税込') ? '通常価格 (税込)' : '通常価格'}</span>
+                            <span class="price-num">${gym.price.replace(/[^\d,円]/g, '') || gym.price}</span>
+                        </div>
+                    </div>
+                    <div class="gym-meta">📍 ${gym.address}</div>
+                    <div class="gym-meta">🏃 ${keyword} から約 ${gym.distance.toFixed(1)}km</div>
+                    <div class="card-buttons">
+                        <button class="btn-card-detail">詳細</button>
+                        <a class="btn-card-site" href="${gym.url}" target="_blank">公式サイト</a>
+                    </div>
                 `;
 
-                // カードをクリックしたらそのピンへジャンプしてポップアップを開く
-                card.onclick = () => {
+                // カードクリックで地図がスムーズに動く
+                card.onclick = (e) => {
+                    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' && e.target.classList.contains('btn-card-site')) return;
                     map.setView([gym.lat, gym.lng], 15);
                     marker.openPopup();
                 };
 
-                resultsDiv.appendChild(card);
+                listDiv.appendChild(card);
             });
 
-            // 最後に、一番近い店舗（基準点）にマップをジャンプさせる
-            map.setView([baseLat, baseLng], 14);
+            // 基準点にジャンプ
+            map.setView([baseLat, baseLng], 13);
         }
     </script>
 </body>
