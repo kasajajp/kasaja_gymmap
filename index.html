@@ -50,8 +50,8 @@
         .gym-card:hover { border-color: #9d5bfa; box-shadow: 0 4px 12px rgba(157,91,250,0.1); }
         .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
         .gym-name { font-size: 16px; font-weight: bold; color: #1c1c1e; line-height: 1.4; }
-        .price-badge { background: #fff; border: 1px solid #9d5bfa; color: #9d5bfa; padding: 8px 12px; border-radius: 6px; text-align: right; font-size: 12px; font-weight: bold; }
-        .price-num { font-size: 16px; display: block; }
+        .price-badge { background: #fff; border: 1px solid #9d5bfa; color: #9d5bfa; padding: 6px 10px; border-radius: 6px; text-align: center; font-size: 11px; font-weight: bold; min-width: 90px; }
+        .price-num { font-size: 15px; display: block; color: #9d5bfa; margin-top: 20px; }
         .gym-meta { font-size: 13px; color: #8e8e93; margin: 5px 0; display: flex; align-items: center; gap: 5px; }
         .card-buttons { display: flex; gap: 8px; margin-top: 15px; }
         .btn-card-detail { flex: 1; background: #9d5bfa; color: white; border: none; padding: 8px; border-radius: 6px; font-size: 12px; font-weight: bold; text-align: center; cursor: pointer; }
@@ -160,12 +160,12 @@
             markers = [];
         }
 
-        // 🔍 バグ修正版のフロントエンド内フィルタリング検索
+        // 🔍 フロントエンド内フィルタリング検索（価格表示修正版）
         function searchGyms() {
             const keyword = document.getElementById('searchInput').value.trim();
             if (!keyword) return;
 
-            // ① 入力ワード（例：「葛西」）が名前か住所に【実際に含まれる】店舗だけを厳密にフィルタリング
+            // ① 入力ワードが名前か住所に含まれる店舗だけを厳密にフィルタリング
             const baseGyms = allGymData.filter(gym => {
                 const nameMatch = (gym.name || "").includes(keyword);
                 const addressMatch = (gym.address || "").includes(keyword);
@@ -183,7 +183,7 @@
                 return;
             }
 
-            // ② マッチした店舗の中から、有効な座標を持つ最初の店舗を基準点にする
+            // ② 最初に見つかった有効な店舗の座標を基準点にする
             const centerGym = baseGyms.find(g => g.lat && g.lng);
             if (!centerGym) {
                 listDiv.innerHTML = '<div style="color:#ff3b30; text-align:center; padding:20px; font-size:14px;">座標データが見つかりません。</div>';
@@ -192,7 +192,7 @@
             const baseLat = centerGym.lat;
             const baseLng = centerGym.lng;
 
-            // ③ 基準点からの距離を計算して、近い順にソート
+            // ③ 基準点からの距離を計算してソート
             const processedGyms = baseGyms.map(gym => {
                 let distance = 9999;
                 if (gym.lat && gym.lng) {
@@ -203,13 +203,16 @@
 
             countSpan.innerText = `${processedGyms.length}店舗`;
 
-            // ④ オリジナルデザインのUIカードを生成
+            // ④ オリジナルデザインのUIカードを生成（★価格表示の修正を適用）
             processedGyms.forEach(gym => {
                 if (!gym.lat || !gym.lng) return;
 
+                // データから「¥8,228」のような税込価格の最初の塊だけを綺麗に取得する処理
+                const displayPrice = gym.price ? gym.price.split(' ')[0] : '価格情報なし';
+
                 // 地図ピンを追加
                 const marker = L.marker([gym.lat, gym.lng]).addTo(map)
-                    .bindPopup(`<b>${gym.name}</b><br>${gym.address}<br>料金: ${gym.price}<br><a href="${gym.url}" target="_blank" style="color:#9d5bfa; font-weight:bold;">店舗サイトへ</a>`);
+                    .bindPopup(`<b>${gym.name}</b><br>${gym.address}<br>料金: ${displayPrice}<br><a href="${gym.url}" target="_blank" style="color:#9d5bfa; font-weight:bold;">店舗サイトへ</a>`);
                 markers.push(marker);
 
                 // UIデザインカード
@@ -219,8 +222,8 @@
                     <div class="card-top">
                         <div class="gym-name">${gym.name}</div>
                         <div class="price-badge">
-                            <span>${gym.price.includes('税込') ? '通常価格 (税込)' : '通常価格'}</span>
-                            <span class="price-num">${gym.price.replace(/[^\d,円]/g, '') || gym.price}</span>
+                            <span>通常価格(税込)</span>
+                            <span class="price-num">${displayPrice}</span>
                         </div>
                     </div>
                     <div class="gym-meta">📍 ${gym.address}</div>
