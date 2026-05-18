@@ -122,7 +122,7 @@ let gymDatabase = [];
 let currentMarkers = [];
 
 // 1. ページが開かれた瞬間にデータをロード
-fetch('gym_data.json')
+fetch('gym_data_all.json')
     .then(response => response.json())
     .then(data => {
         gymDatabase = data; 
